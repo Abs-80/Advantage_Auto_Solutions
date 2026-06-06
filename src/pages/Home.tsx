@@ -14,7 +14,7 @@ export function Home() {
         {/* Background Image Setup for Depth */}
         <div className="absolute inset-0 z-0 opacity-60">
           <img 
-            src="/hero-bg.jpg" 
+            src={`${import.meta.env.BASE_URL}hero-bg.jpg`} 
             alt="European Classic Automotive Studio" 
             className="w-full h-full object-cover object-center transform scale-105"
           />
@@ -73,7 +73,7 @@ export function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0 opacity-60">
           <img 
-            src="/history-bg.jpeg" 
+            src={`${import.meta.env.BASE_URL}history-bg.jpeg`} 
             alt="Years of Experience" 
             className="w-full h-full object-cover object-center grayscale"
           />
@@ -111,7 +111,7 @@ export function Home() {
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {['Middle East', 'Asia', 'North America', 'Europe / UK'].map((region) => (
-                  <div key={region} className="bg-slate-900 p-4 rounded-xl border border-slate-800 text-center text-sm font-bold text-slate-300 shadow-sm hover:border-amber-500/30 transition-colors">
+                  <div key={region} className="bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10 text-center text-sm font-bold text-slate-300 shadow-sm hover:border-amber-500/50 hover:bg-white/10 transition-all cursor-default">
                     {region}
                   </div>
                 ))}
@@ -119,7 +119,7 @@ export function Home() {
             </div>
             
             <div className="relative isolate flex justify-center lg:justify-end w-full">
-               <div className="w-full bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-xl overflow-hidden relative">
+               <div className="w-full bg-slate-900/40 backdrop-blur-xl p-8 rounded-2xl border border-white/5 shadow-2xl overflow-hidden relative">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2"></div>
                   <div className="flex items-center space-x-3 mb-4 relative z-10">
                      <BarChart3 className="w-6 h-6 text-amber-500" />

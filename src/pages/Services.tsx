@@ -11,8 +11,19 @@ export function Services() {
   return (
     <div className="w-full pb-24 bg-slate-950 min-h-screen">
       {/* Header */}
-      <div className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto max-w-3xl">
+      <div className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-slate-800/50 mb-12">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0 opacity-50 pointer-events-none">
+          <img 
+            src={`${import.meta.env.BASE_URL}LF7_9304+(2).webp`} 
+            alt="Services Background" 
+            className="w-full h-full object-cover object-center grayscale"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto max-w-3xl">
           <motion.h1 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -32,7 +43,7 @@ export function Services() {
       </div>
 
       {/* Services Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {servicesData.map((service, index) => {
             const Icon = Icons[service.iconName] as React.ElementType;
@@ -42,17 +53,17 @@ export function Services() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-slate-900 rounded-xl border border-slate-800 flex flex-col p-5 gap-3"
+                className="bg-slate-900/40 backdrop-blur-xl rounded-xl border border-white/5 flex flex-col p-6 gap-4 hover:bg-slate-900/60 transition-all hover:border-white/10 hover:-translate-y-1 shadow-2xl"
               >
-                  <h3 className="text-base font-bold text-white m-0">
+                  <h3 className="text-lg font-bold text-white m-0 tracking-wide">
                     {t(service.titleKey)}
                   </h3>
-                  <p className="text-[13px] text-slate-400 m-0 leading-relaxed">
+                  <p className="text-sm text-slate-400 m-0 leading-relaxed font-light">
                     {t(service.descKey)}
                   </p>
                    <Link
                      to={`/contact?service=${service.id}`}
-                     className="mt-auto w-full bg-slate-800 hover:bg-slate-700 text-slate-300 p-2 rounded-md font-bold text-xs text-center transition-colors flex items-center justify-center"
+                     className="mt-auto w-full bg-white/5 hover:bg-white/10 text-white p-3 rounded-lg font-medium text-sm text-center transition-all flex items-center justify-center border border-white/5"
                    >
                      {t('action.requestQuote')}
                    </Link>

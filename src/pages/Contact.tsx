@@ -36,8 +36,18 @@ export function Contact() {
   };
 
   return (
-    <div className="flex-1 bg-slate-950 pt-16 pb-32">
-      <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative flex-1 bg-slate-950 pt-24 pb-32 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+        <img 
+          src={`${import.meta.env.BASE_URL}LF7_9372+(2).webp`} 
+          alt="Contact Background" 
+          className="w-full h-full object-cover object-center grayscale"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-slate-950/80 to-slate-950" />
+      </div>
+
+      <div className="relative z-10 max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
           <motion.h1 
             initial={{ opacity: 0, y: 10 }}
@@ -60,8 +70,11 @@ export function Contact() {
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ delay: 0.2 }}
-           className="bg-slate-900 rounded-2xl shadow-[0_10px_15px_-3px_rgba(0,0,0,0.3)] border border-slate-800 p-8"
+           className="bg-slate-900/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/5 p-8 relative overflow-hidden"
         >
+          {/* Abstract glow */}
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent"></div>
+
           {isSubmitted ? (
              <div className="text-center py-16">
                <div className="mx-auto w-16 h-16 bg-amber-500/10 text-amber-500 rounded-full flex items-center justify-center mb-6">
@@ -88,7 +101,7 @@ export function Contact() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full p-3 rounded-lg bg-slate-950 border border-slate-800 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors text-sm text-white placeholder-slate-500"
+                    className="w-full p-3 rounded-lg bg-white/5 border border-white/10 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-colors text-sm text-white placeholder-slate-400 backdrop-blur-sm"
                   />
                 </div>
                 <div>
@@ -100,7 +113,7 @@ export function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full p-3 rounded-lg bg-slate-950 border border-slate-800 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors text-sm text-white placeholder-slate-500"
+                    className="w-full p-3 rounded-lg bg-white/5 border border-white/10 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-colors text-sm text-white placeholder-slate-400 backdrop-blur-sm"
                   />
                 </div>
               </div>
@@ -111,7 +124,7 @@ export function Contact() {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full p-3 rounded-lg bg-slate-950 border border-slate-800 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-colors text-sm text-white"
+                  className="w-full p-3 rounded-lg bg-white/5 border border-white/10 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-colors text-sm text-white backdrop-blur-sm"
                 >
                   <option value="general">{t('contact.form.service.general')}</option>
                   {servicesData.map(service => (
@@ -131,7 +144,7 @@ export function Contact() {
                   placeholder={t('contact.form.message') as string}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full p-3 rounded-lg bg-slate-950 border border-slate-800 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-colors text-sm text-white placeholder-slate-500 resize-none h-20"
+                  className="w-full p-3 rounded-lg bg-white/5 border border-white/10 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-colors text-sm text-white placeholder-slate-400 resize-none h-20 backdrop-blur-sm"
                 />
               </div>
 

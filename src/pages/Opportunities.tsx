@@ -7,8 +7,18 @@ export function Opportunities() {
   const { t } = useTranslation();
 
   return (
-    <div className="flex-1 bg-slate-950 pt-16 pb-32">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative flex-1 bg-slate-950 pt-24 pb-32 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+        <img 
+          src={`${import.meta.env.BASE_URL}LF7_9370+(2).webp`} 
+          alt="Opportunities Background" 
+          className="w-full h-full object-cover object-center grayscale"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-slate-950/80 to-slate-950" />
+      </div>
+
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <motion.h1 
             initial={{ opacity: 0, y: 10 }}
@@ -24,15 +34,15 @@ export function Opportunities() {
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ delay: 0.1 }}
-           className="bg-slate-900 rounded-2xl shadow-[0_10px_15px_-3px_rgba(0,0,0,0.3)] border border-slate-800 overflow-hidden"
+           className="bg-slate-900/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/5 overflow-hidden"
         >
-          <div className="p-8 md:p-10 border-b border-slate-800 bg-slate-900 relative overflow-hidden">
+          <div className="p-8 md:p-10 border-b border-white/5 bg-slate-900/40 relative overflow-hidden">
              {/* Abstract background element */}
-             <div className="absolute top-0 right-0 w-64 h-64 bg-slate-800 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+             <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
              
              <div className="relative z-10">
                <div className="flex items-center gap-3 mb-6">
-                 <span className="bg-amber-500/20 text-amber-500 px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-md">New</span>
+                 <span className="bg-amber-500/20 text-amber-500 px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-md border border-amber-500/20">New</span>
                  <span className="text-slate-400 text-sm flex items-center"><MapPin className="w-4 h-4 mr-1"/> UK Nationwide</span>
                </div>
                <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4 leading-tight">
