@@ -1,0 +1,7 @@
+{
+  "name": "Advantage Auto Solutions Web",
+  "description": "A modern website for Advantage Automotive Solutions, featuring multilingual support, service catalog, and quote requests.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
