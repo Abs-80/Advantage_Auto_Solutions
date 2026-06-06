@@ -1,38 +1,52 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSearchParams } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Send, CheckCircle2 } from 'lucide-react';
-import { servicesData } from '../types';
+import { CheckCircle2, AlertCircle } from 'lucide-react';
 
 export function Contact() {
   const { t } = useTranslation();
-  const [searchParams] = useSearchParams();
-  const defaultService = searchParams.get('service') || 'general';
-
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  
   const [formData, setFormData] = useState({
-    name: '',
+    fullName: '',
     email: '',
-    service: defaultService,
-    message: ''
+    phone: '',
+    projectInquiry: ''
   });
 
-  useEffect(() => {
-    if (searchParams.get('service')) {
-      setFormData(prev => ({ ...prev, service: searchParams.get('service')! }));
-    }
-  }, [searchParams]);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here we'd typically send data to an API endpoint
-    console.log("Mock Submission:", formData);
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    setError(null);
+    
+    try {
+      const response = await fetch('https://hook.us1.make.com/o81q2kbqqweu4pxxtfnyb74y5c4euma8', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      // Make webhooks return 200 OK text/plain "Accepted" commonly
+      if (!response.ok) {
+        throw new Error('Transmission failed');
+      }
+      
+      setIsSubmitted(true);
+    } catch (err) {
+      console.error(err);
+      setError('An error occurred during transmission. Please ensure your connection is stable and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -48,21 +62,21 @@ export function Contact() {
       </div>
 
       <div className="relative z-10 max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8">
+        <div className="mb-10 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-[20px] font-display font-bold text-white mb-2"
+            className="text-3xl font-display font-medium text-white mb-3"
           >
-            {t('contact.title')}
+            Commission a Consultation
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-sm text-slate-400"
+            className="text-sm text-slate-400 font-light tracking-wide uppercase"
           >
-            {t('contact.desc')}
+            Begin the restoration journey
           </motion.p>
         </div>
 
@@ -70,89 +84,109 @@ export function Contact() {
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ delay: 0.2 }}
-           className="bg-slate-900/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/5 p-8 relative overflow-hidden"
+           className="bg-slate-900/50 backdrop-blur-2xl rounded-sm shadow-2xl border border-white/10 p-8 md:p-10 relative overflow-hidden"
         >
           {/* Abstract glow */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent"></div>
 
           {isSubmitted ? (
-             <div className="text-center py-16">
-               <div className="mx-auto w-16 h-16 bg-amber-500/10 text-amber-500 rounded-full flex items-center justify-center mb-6">
+             <motion.div 
+               initial={{ opacity: 0, scale: 0.95 }}
+               animate={{ opacity: 1, scale: 1 }}
+               className="text-center py-12"
+             >
+               <div className="mx-auto w-16 h-16 bg-[#D4AF37]/10 text-[#D4AF37] rounded-full flex items-center justify-center mb-6 border border-[#D4AF37]/20">
                  <CheckCircle2 className="w-8 h-8" />
                </div>
-               <h3 className="text-2xl font-display font-medium text-white mb-2">Message Sent</h3>
-               <p className="text-slate-400">We'll get back to you and schedule an inquiry soon.</p>
-               <button 
-                 onClick={() => setIsSubmitted(false)}
-                 className="mt-8 text-amber-500 hover:text-amber-400 font-medium"
-               >
-                 Send another message
-               </button>
-             </div>
+               <h3 className="text-2xl font-display font-medium text-white mb-3 tracking-wide">Transmission Successful</h3>
+               <p className="text-slate-300 font-light leading-relaxed">
+                 Thank you for your inquiry. Our specialists will review your project details and contact you to schedule a consultation.
+               </p>
+             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <div className="grid grid-cols-1 gap-4">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+              {error && (
+                <motion.div 
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-center gap-3 p-4 bg-red-950/30 border border-red-900/50 rounded-sm text-sm text-red-200"
+                >
+                  <AlertCircle className="w-5 h-5 flex-shrink-0 text-red-500" />
+                  <p>{error}</p>
+                </motion.div>
+              )}
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
+                  <label htmlFor="fullName" className="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-widest">
+                    Full Name
+                  </label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    placeholder={t('contact.form.name') as string}
+                    id="fullName"
+                    name="fullName"
                     required
-                    value={formData.name}
+                    value={formData.fullName}
                     onChange={handleChange}
-                    className="w-full p-3 rounded-lg bg-white/5 border border-white/10 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-colors text-sm text-white placeholder-slate-400 backdrop-blur-sm"
+                    className="w-full p-3.5 rounded-sm bg-black/20 border border-white/10 focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-sm text-white placeholder-slate-600 focus:bg-black/40 backdrop-blur-sm"
+                    placeholder="E.g. John Doe"
                   />
                 </div>
                 <div>
+                  <label htmlFor="email" className="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-widest">
+                    Email Address
+                  </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    placeholder={t('contact.form.email') as string}
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full p-3 rounded-lg bg-white/5 border border-white/10 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-colors text-sm text-white placeholder-slate-400 backdrop-blur-sm"
+                    className="w-full p-3.5 rounded-sm bg-black/20 border border-white/10 focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-sm text-white placeholder-slate-600 focus:bg-black/40 backdrop-blur-sm"
+                    placeholder="E.g. john@example.com"
                   />
                 </div>
               </div>
 
               <div>
-                <select
-                  id="service"
-                  name="service"
-                  value={formData.service}
+                <label htmlFor="phone" className="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-widest">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  value={formData.phone}
                   onChange={handleChange}
-                  className="w-full p-3 rounded-lg bg-white/5 border border-white/10 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-colors text-sm text-white backdrop-blur-sm"
-                >
-                  <option value="general">{t('contact.form.service.general')}</option>
-                  {servicesData.map(service => (
-                    <option key={service.id} value={service.id}>
-                      {t(service.titleKey)}
-                    </option>
-                  ))}
-                </select>
+                  className="w-full p-3.5 rounded-sm bg-black/20 border border-white/10 focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-sm text-white placeholder-slate-600 focus:bg-black/40 backdrop-blur-sm"
+                  placeholder="+1 (555) 000-0000"
+                />
               </div>
 
               <div>
+                <label htmlFor="projectInquiry" className="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-widest">
+                  Project Inquiry
+                </label>
                 <textarea
-                  id="message"
-                  name="message"
+                  id="projectInquiry"
+                  name="projectInquiry"
                   required
-                  rows={3}
-                  placeholder={t('contact.form.message') as string}
-                  value={formData.message}
+                  rows={4}
+                  value={formData.projectInquiry}
                   onChange={handleChange}
-                  className="w-full p-3 rounded-lg bg-white/5 border border-white/10 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-colors text-sm text-white placeholder-slate-400 resize-none h-20 backdrop-blur-sm"
+                  className="w-full p-3.5 rounded-sm bg-black/20 border border-white/10 focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-sm text-white placeholder-slate-600 focus:bg-black/40 resize-none backdrop-blur-sm"
+                  placeholder="Describe your restoration goals or service requirements..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full mt-2 flex justify-center items-center p-3.5 rounded-lg text-base font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 transition-colors focus:outline-none cursor-pointer"
+                disabled={isSubmitting}
+                className="w-full mt-4 flex justify-center items-center py-4 px-6 rounded-sm text-sm font-semibold tracking-widest uppercase text-white bg-[#D4AF37]/20 border border-[#D4AF37]/50 hover:bg-[#D4AF37] hover:text-slate-950 transition-all disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none backdrop-blur-sm"
               >
-                {t('contact.form.submit')}
+                {isSubmitting ? 'Transmitting...' : 'Submit Inquiry'}
               </button>
             </form>
           )}
