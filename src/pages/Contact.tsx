@@ -27,12 +27,17 @@ export function Contact() {
     setError(null);
     
     try {
+      const payload = {
+        ...formData,
+        submittedAt: new Date().toISOString()
+      };
+
       const response = await fetch('https://hook.us1.make.com/o81q2kbqqweu4pxxtfnyb74y5c4euma8', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
       });
       
       // Make webhooks return 200 OK text/plain "Accepted" commonly

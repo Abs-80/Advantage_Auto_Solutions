@@ -62,7 +62,7 @@ const resources = {
       "opp.job.call": "We will arrange an initial confidential call to discuss the best roles for you!",
       
       "footer.insights": "Follow our page for insights, updates, and industry strategies.",
-      "footer.rights": "© 2024 Advantage Automotive Solutions. All rights reserved."
+      "footer.rights": "© 2026 Advantage Automotive Solutions. All rights reserved."
     }
   },
   ar: {
@@ -123,7 +123,7 @@ const resources = {
       "opp.job.call": "سنقوم بترتيب مكالمة سرية أولية لمناقشة أفضل الأدوار لك!",
       
       "footer.insights": "تابع صفحتنا للحصول على الرؤى والتحديثات واستراتيجيات الصناعة.",
-      "footer.rights": "© 2024 أدفانتج أوتوموتيف سوليوشنز. جميع الحقوق محفوظة."
+      "footer.rights": "© 2026 أدفانتج أوتوموتيف سوليوشنز. جميع الحقوق محفوظة."
     }
   },
   zh: {
@@ -184,7 +184,7 @@ const resources = {
       "opp.job.call": "我们将安排一次初步的保密电话，以讨论最适合您的角色！",
       
       "footer.insights": "关注我们的页面获取行业洞察、更新与战略。",
-      "footer.rights": "© 2024 Advantage Automotive Solutions。保留所有权利。"
+      "footer.rights": "© 2026 Advantage Automotive Solutions。保留所有权利。"
     }
   }
 };
