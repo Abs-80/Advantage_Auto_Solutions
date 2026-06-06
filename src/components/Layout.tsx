@@ -13,7 +13,7 @@ export function Layout() {
   }, [i18n.language]);
 
   return (
-    <div className="min-h-screen flex flex-col pt-20" dir={i18n.dir()}>
+    <div className="min-h-screen flex flex-col pt-[70px] bg-slate-950" dir={i18n.dir()}>
       <ScrollToTop />
       <Navbar />
       <main className="flex-1 flex flex-col">

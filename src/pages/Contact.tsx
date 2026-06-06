@@ -36,13 +36,13 @@ export function Contact() {
   };
 
   return (
-    <div className="flex-1 bg-slate-50 pt-16 pb-32">
+    <div className="flex-1 bg-slate-950 pt-16 pb-32">
       <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
           <motion.h1 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-[20px] font-display font-bold text-slate-900 mb-2"
+            className="text-[20px] font-display font-bold text-white mb-2"
           >
             {t('contact.title')}
           </motion.h1>
@@ -50,7 +50,7 @@ export function Contact() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-sm text-slate-500"
+            className="text-sm text-slate-400"
           >
             {t('contact.desc')}
           </motion.p>
@@ -60,18 +60,18 @@ export function Contact() {
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ delay: 0.2 }}
-           className="bg-white rounded-2xl shadow-[0_10px_15px_-3px_rgba(0,0,0,0.05)] border border-slate-200 p-8"
+           className="bg-slate-900 rounded-2xl shadow-[0_10px_15px_-3px_rgba(0,0,0,0.3)] border border-slate-800 p-8"
         >
           {isSubmitted ? (
              <div className="text-center py-16">
-               <div className="mx-auto w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-6">
+               <div className="mx-auto w-16 h-16 bg-amber-500/10 text-amber-500 rounded-full flex items-center justify-center mb-6">
                  <CheckCircle2 className="w-8 h-8" />
                </div>
-               <h3 className="text-2xl font-display font-medium text-slate-900 mb-2">Message Sent</h3>
-               <p className="text-slate-600">We'll get back to you and schedule an inquiry soon.</p>
+               <h3 className="text-2xl font-display font-medium text-white mb-2">Message Sent</h3>
+               <p className="text-slate-400">We'll get back to you and schedule an inquiry soon.</p>
                <button 
                  onClick={() => setIsSubmitted(false)}
-                 className="mt-8 text-blue-600 hover:text-blue-700 font-medium"
+                 className="mt-8 text-amber-500 hover:text-amber-400 font-medium"
                >
                  Send another message
                </button>
@@ -88,7 +88,7 @@ export function Contact() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full p-3 rounded-lg border border-slate-300 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 transition-colors text-sm"
+                    className="w-full p-3 rounded-lg bg-slate-950 border border-slate-800 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors text-sm text-white placeholder-slate-500"
                   />
                 </div>
                 <div>
@@ -100,7 +100,7 @@ export function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full p-3 rounded-lg border border-slate-300 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 transition-colors text-sm"
+                    className="w-full p-3 rounded-lg bg-slate-950 border border-slate-800 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors text-sm text-white placeholder-slate-500"
                   />
                 </div>
               </div>
@@ -111,7 +111,7 @@ export function Contact() {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full p-3 rounded-lg border border-slate-300 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 transition-colors bg-white text-sm"
+                  className="w-full p-3 rounded-lg bg-slate-950 border border-slate-800 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-colors text-sm text-white"
                 >
                   <option value="general">{t('contact.form.service.general')}</option>
                   {servicesData.map(service => (
@@ -131,13 +131,13 @@ export function Contact() {
                   placeholder={t('contact.form.message') as string}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full p-3 rounded-lg border border-slate-300 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 transition-colors text-sm resize-none h-20"
+                  className="w-full p-3 rounded-lg bg-slate-950 border border-slate-800 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-colors text-sm text-white placeholder-slate-500 resize-none h-20"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full mt-2 flex justify-center items-center p-3.5 rounded-lg text-base font-bold text-white bg-blue-600 hover:bg-blue-700 transition-colors focus:outline-none cursor-pointer"
+                className="w-full mt-2 flex justify-center items-center p-3.5 rounded-lg text-base font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 transition-colors focus:outline-none cursor-pointer"
               >
                 {t('contact.form.submit')}
               </button>

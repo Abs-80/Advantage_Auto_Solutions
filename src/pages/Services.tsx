@@ -9,14 +9,14 @@ export function Services() {
   const { t } = useTranslation();
 
   return (
-    <div className="w-full pb-24 bg-slate-50 min-h-screen">
+    <div className="w-full pb-24 bg-slate-950 min-h-screen">
       {/* Header */}
       <div className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto max-w-3xl">
           <motion.h1 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-display font-bold text-slate-900 tracking-tight mb-4"
+            className="text-4xl md:text-5xl font-display font-bold text-white tracking-tight mb-4"
           >
             {t('services.title')}
           </motion.h1>
@@ -24,7 +24,7 @@ export function Services() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-slate-500 max-w-[540px] leading-relaxed"
+            className="text-lg text-slate-400 max-w-[540px] leading-relaxed"
           >
             {t('services.desc')}
           </motion.p>
@@ -42,9 +42,9 @@ export function Services() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl border border-slate-200 flex flex-col p-5 gap-3"
+                className="bg-slate-900 rounded-xl border border-slate-800 flex flex-col p-5 gap-3"
               >
-                  <h3 className="text-base font-bold text-slate-700 m-0">
+                  <h3 className="text-base font-bold text-white m-0">
                     {t(service.titleKey)}
                   </h3>
                   <p className="text-[13px] text-slate-400 m-0 leading-relaxed">
@@ -52,7 +52,7 @@ export function Services() {
                   </p>
                    <Link
                      to={`/contact?service=${service.id}`}
-                     className="mt-auto w-full bg-slate-100 hover:bg-slate-200 text-slate-600 p-2 rounded-md font-bold text-xs text-center transition-colors flex items-center justify-center"
+                     className="mt-auto w-full bg-slate-800 hover:bg-slate-700 text-slate-300 p-2 rounded-md font-bold text-xs text-center transition-colors flex items-center justify-center"
                    >
                      {t('action.requestQuote')}
                    </Link>

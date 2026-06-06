@@ -6,7 +6,7 @@ export function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-slate-900 text-slate-400 py-6 md:py-0 md:h-16 flex-shrink-0">
+    <footer className="bg-slate-900 border-t border-slate-800 text-slate-400 py-6 md:py-0 md:h-16 flex-shrink-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-medium">
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 w-full md:w-auto">
