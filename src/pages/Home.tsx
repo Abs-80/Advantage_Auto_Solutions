@@ -235,7 +235,7 @@ export function Home() {
                   innerClassName="p-8 flex flex-col items-center text-center"
                >
                   <div className="w-24 h-24 bg-slate-950 rounded-full mb-6 flex items-center justify-center border-2 border-white/10 overflow-hidden shadow-inner shrink-0 relative z-10">
-                     <img src="/1708617744518.jpeg" alt="Paul Chapman" className="w-full h-full object-cover" />
+                     <img src={`${import.meta.env.BASE_URL}1708617744518.jpeg`} alt="Paul Chapman" className="w-full h-full object-cover" />
                   </div>
                   <div className="relative inline-flex items-center justify-center mb-1 z-10">
                     <div className="absolute right-full mr-3 text-amber-500 drop-shadow-lg">
