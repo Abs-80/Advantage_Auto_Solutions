@@ -189,7 +189,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full mt-4 flex justify-center items-center py-4 px-6 rounded-sm text-sm font-semibold tracking-widest uppercase text-white bg-[#D4AF37]/20 border border-[#D4AF37]/50 hover:bg-[#D4AF37] hover:text-slate-950 transition-all disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none backdrop-blur-sm"
+                className="w-full mt-4 flex justify-center items-center py-4 px-6 rounded-sm text-sm font-semibold tracking-widest uppercase text-white bg-[#D4AF37]/20 border border-[#D4AF37]/50 hover:bg-[#D4AF37] hover:text-slate-950 transition-all disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none backdrop-blur-sm hover:shadow-[0_4px_20px_rgba(245,158,11,0.6)]"
               >
                 {isSubmitting ? 'Transmitting...' : 'Submit Inquiry'}
               </button>

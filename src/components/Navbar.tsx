@@ -18,8 +18,7 @@ export function Navbar() {
   const navLinks = [
     { to: "/", label: t('nav.home') },
     { to: "/services", label: t('nav.services') },
-    { to: "/opportunities", label: t('nav.opportunities') },
-    { to: "/contact", label: t('nav.contact') }
+    { to: "/opportunities", label: t('nav.opportunities') }
   ];
 
   return (
@@ -67,7 +66,7 @@ export function Navbar() {
             
             <NavLink
               to="/contact"
-              className="bg-amber-500 hover:bg-amber-400 text-slate-950 px-5 py-2.5 rounded-lg text-sm font-bold transition-colors"
+              className="bg-amber-500 hover:bg-amber-400 text-slate-950 px-5 py-2.5 rounded-lg text-sm font-bold transition-all hover:shadow-[0_4px_20px_rgba(245,158,11,0.6)]"
             >
               {t('action.requestQuote')}
             </NavLink>

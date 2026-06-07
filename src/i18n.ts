@@ -33,7 +33,7 @@ const resources = {
       "service.training.title": "Training & Development",
       "service.training.desc": "Empower your team with advanced industry strategies and measurable growth-oriented training paradigms.",
       
-      "action.requestQuote": "Request Quote",
+      "action.requestQuote": "Get in Contact",
       
       "contact.title": "Set Up an Inquiry",
       "contact.desc": "Drop us a message if you'd like to discuss your unique goals. Because when your performance accelerates, so does ours.",
@@ -57,7 +57,7 @@ const resources = {
       "opp.job.why.3": "Commitment: Work for an automotive group that truly invests in its technicians.",
       "opp.job.locations": "Immediate Openings in Locations Including: Watford, Hatfield, Cambridge, Chester, Farnborough, Basingstoke, Manchester, Sevenoaks, Liverpool, Guildford, and more!",
       "opp.job.apply.title": "Ready to Drive Your Career Forward? Apply Now!",
-      "opp.job.apply.desc": "These highly sought-after roles are being filled immediately. To apply, please send your CV (in Word format) including your preferred geographical working area, latest contact details, current package, and availability to:",
+      "opp.job.apply.desc": "These highly sought-after roles are being filled immediately. To apply, please use the contact button above to get in touch with our team with your CV (in Word format) including your preferred geographical working area, latest contact details, current package, and availability.",
       "opp.job.email": "registeryourcv@advantageautomotivesolutions.com",
       "opp.job.call": "We will arrange an initial confidential call to discuss the best roles for you!",
       
@@ -94,7 +94,7 @@ const resources = {
       "service.training.title": "التدريب والتطوير",
       "service.training.desc": "مكّن فريقك باستراتيجيات الصناعة المتقدمة ونماذج التدريب الموجهة نحو النمو القابل للقياس.",
       
-      "action.requestQuote": "طلب عرض سعر",
+      "action.requestQuote": "تواصل معنا",
       
       "contact.title": "قم بإعداد استفسار",
       "contact.desc": "اترك لنا رسالة إذا كنت ترغب في مناقشة أهدافك الفريدة. لأنه عندما يتسارع أدائك، يتسارع أداؤنا.",
@@ -118,7 +118,7 @@ const resources = {
       "opp.job.why.3": "الالتزام: العمل في مجموعة سيارات تستثمر حقًا في الفنيين لديها.",
       "opp.job.locations": "وظائف شاغرة فورية في: واتفورد، هاتفيلد، كامبريدج، تشيستر، فارنبورو، باسينجستوك، مانشستر، سيفينواكس، ليفربول، جيلفورد، والمزيد!",
       "opp.job.apply.title": "هل أنت مستعد لدفع مسيرتك المهنية إلى الأمام؟ قدم الآن!",
-      "opp.job.apply.desc": "يتم شغل هذه الأدوار المطلوبة بشدة على الفور. للتقديم، يرجى إرسال سيرتك الذاتية (بتنسيق Word) بما في ذلك منطقة العمل الجغرافية المفضلة لديك، وأحدث تفاصيل الاتصال، والحزمة الحالية، ومدى التوفر إلى:",
+      "opp.job.apply.desc": "يتم شغل هذه الأدوار المطلوبة بشدة على الفور. للتقديم، يرجى استخدام زر الاتصال أعلاه للتواصل مع فريقنا وإرفاق سيرتك الذاتية (بتنسيق Word) بما في ذلك منطقة العمل الجغرافية المفضلة لديك، وأحدث تفاصيل الاتصال، والحزمة الحالية، ومدى التوفر.",
       "opp.job.email": "registeryourcv@advantageautomotivesolutions.com",
       "opp.job.call": "سنقوم بترتيب مكالمة سرية أولية لمناقشة أفضل الأدوار لك!",
       
@@ -155,7 +155,7 @@ const resources = {
       "service.training.title": "培训与发展",
       "service.training.desc": "用先进的行业战略和以可衡量增长为导向的培训模式武装您的团队。",
       
-      "action.requestQuote": "获取报价",
+      "action.requestQuote": "联系我们",
       
       "contact.title": "建立咨询",
       "contact.desc": "如果您想讨论您的独特目标，请给我们留言。因为当您的业务加速发展时，我们也会与您共同成长。",
@@ -179,7 +179,7 @@ const resources = {
       "opp.job.why.3": "承诺：为一个真正投资其技术人员的汽车集团工作。",
       "opp.job.locations": "直接空缺职位位于：沃特福德，哈特菲尔德，剑桥，切斯特，法恩伯勒，贝辛斯托克，曼彻斯特，塞文欧克斯，利物浦，吉尔福德等！",
       "opp.job.apply.title": "准备好推动您的职业发展了吗？立即申请！",
-      "opp.job.apply.desc": "这些备受追捧的职位正在立即填补。要申请，请将您的个人简历（Word格式）发送至以下邮箱，需包括您的首选地理工作区域、最新联系方式、当前薪酬包裹以及可用时间：",
+      "opp.job.apply.desc": "这些备受追捧的职位正在立即填补。要申请，请使用上方的联系按钮与我们的团队取得联系，需包括您的个人简历（Word格式）、您的首选地理工作区域、最新联系方式、当前薪酬包裹以及可用时间。",
       "opp.job.email": "registeryourcv@advantageautomotivesolutions.com",
       "opp.job.call": "我们将安排一次初步的保密电话，以讨论最适合您的角色！",
       

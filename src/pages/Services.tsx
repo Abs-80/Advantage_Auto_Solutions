@@ -63,7 +63,7 @@ export function Services() {
                   </p>
                    <Link
                      to={`/contact?service=${service.id}`}
-                     className="mt-auto w-full bg-white/5 hover:bg-white/10 text-white p-3 rounded-lg font-medium text-sm text-center transition-all flex items-center justify-center border border-white/5"
+                     className="mt-auto w-full bg-white/5 hover:bg-white/10 text-white p-3 rounded-lg font-medium text-sm text-center transition-all flex items-center justify-center border border-white/5 hover:shadow-[0_4px_20px_rgba(245,158,11,0.6)] hover:border-amber-500/50"
                    >
                      {t('action.requestQuote')}
                    </Link>

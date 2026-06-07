@@ -104,14 +104,6 @@ export function Opportunities() {
                  {t('opp.job.apply.desc')}
                </p>
                
-               <a 
-                 href={`mailto:${t('opp.job.email')}`}
-                 className="inline-flex items-center justify-center w-full md:w-auto px-6 py-4 rounded-xl text-base font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 transition-colors shadow-sm"
-               >
-                 <Mail className="w-5 h-5 mr-2" />
-                 {t('opp.job.email')}
-               </a>
-               
                <p className="mt-6 text-sm font-medium text-slate-500 italic">
                  {t('opp.job.call')}
                </p>
