@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { MessageSquareShare } from 'lucide-react';
+import { Facebook, Instagram } from 'lucide-react';
 
 export function Footer() {
   const { t } = useTranslation();
@@ -15,7 +15,15 @@ export function Footer() {
              <div className="flex items-center gap-1.5 whitespace-nowrap"><div className="w-1.5 h-1.5 rounded-full bg-green-500"></div> Toronto, CA</div>
              <div className="flex items-center gap-1.5 whitespace-nowrap"><div className="w-1.5 h-1.5 rounded-full bg-green-500"></div> Singapore</div>
           </div>
-          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-center md:text-right w-full md:w-auto">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 text-center md:text-right w-full md:w-auto">
+             <div className="flex items-center gap-4 text-slate-500 mt-2 md:mt-0">
+               <a href="#" className="hover:text-amber-500 transition-colors" aria-label="Facebook">
+                 <Facebook className="w-4 h-4" />
+               </a>
+               <a href="#" className="hover:text-amber-500 transition-colors" aria-label="Instagram">
+                 <Instagram className="w-4 h-4" />
+               </a>
+             </div>
              <span className="hidden md:inline-block text-slate-500">{t('footer.insights')}</span>
              <span className="text-slate-500">{t('footer.rights')}</span>
           </div>

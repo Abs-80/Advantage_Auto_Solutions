@@ -73,7 +73,7 @@ export function Contact() {
             animate={{ opacity: 1, y: 0 }}
             className="text-3xl font-display font-medium text-white mb-3"
           >
-            Commission a Consultation
+            {t('contact.title.custom')}
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
@@ -81,7 +81,7 @@ export function Contact() {
             transition={{ delay: 0.1 }}
             className="text-sm text-slate-400 font-light tracking-wide uppercase"
           >
-            Begin the restoration journey
+            {t('contact.subtitle.custom')}
           </motion.p>
         </div>
 
@@ -103,9 +103,9 @@ export function Contact() {
                <div className="mx-auto w-16 h-16 bg-[#D4AF37]/10 text-[#D4AF37] rounded-full flex items-center justify-center mb-6 border border-[#D4AF37]/20">
                  <CheckCircle2 className="w-8 h-8" />
                </div>
-               <h3 className="text-2xl font-display font-medium text-white mb-3 tracking-wide">Transmission Successful</h3>
+               <h3 className="text-2xl font-display font-medium text-white mb-3 tracking-wide">{t('contact.success.title')}</h3>
                <p className="text-slate-300 font-light leading-relaxed">
-                 Thank you for your inquiry. Our specialists will review your project details and contact you to schedule a consultation.
+                 {t('contact.success.desc')}
                </p>
              </motion.div>
           ) : (
@@ -117,14 +117,14 @@ export function Contact() {
                   className="flex items-center gap-3 p-4 bg-red-950/30 border border-red-900/50 rounded-sm text-sm text-red-200"
                 >
                   <AlertCircle className="w-5 h-5 flex-shrink-0 text-red-500" />
-                  <p>{error}</p>
+                  <p>{t('contact.error.msg')}</p>
                 </motion.div>
               )}
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="fullName" className="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-widest">
-                    Full Name
+                    {t('contact.form.fullName')}
                   </label>
                   <input
                     type="text"
@@ -134,12 +134,12 @@ export function Contact() {
                     value={formData.fullName}
                     onChange={handleChange}
                     className="w-full p-3.5 rounded-sm bg-black/20 border border-white/10 focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-sm text-white placeholder-slate-600 focus:bg-black/40 backdrop-blur-sm"
-                    placeholder="E.g. John Doe"
+                    placeholder={t('contact.form.fullName.placeholder')}
                   />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-widest">
-                    Email Address
+                    {t('contact.form.email')}
                   </label>
                   <input
                     type="email"
@@ -149,14 +149,14 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full p-3.5 rounded-sm bg-black/20 border border-white/10 focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-sm text-white placeholder-slate-600 focus:bg-black/40 backdrop-blur-sm"
-                    placeholder="E.g. john@example.com"
+                    placeholder={t('contact.form.email.placeholder')}
                   />
                 </div>
               </div>
 
               <div>
                 <label htmlFor="phone" className="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-widest">
-                  Phone Number
+                  {t('contact.form.phone')}
                 </label>
                 <input
                   type="tel"
@@ -166,13 +166,13 @@ export function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full p-3.5 rounded-sm bg-black/20 border border-white/10 focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-sm text-white placeholder-slate-600 focus:bg-black/40 backdrop-blur-sm"
-                  placeholder="+1 (555) 000-0000"
+                  placeholder={t('contact.form.phone.placeholder')}
                 />
               </div>
 
               <div>
                 <label htmlFor="projectInquiry" className="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-widest">
-                  Project Inquiry
+                  {t('contact.form.inquiry')}
                 </label>
                 <textarea
                   id="projectInquiry"
@@ -182,7 +182,7 @@ export function Contact() {
                   value={formData.projectInquiry}
                   onChange={handleChange}
                   className="w-full p-3.5 rounded-sm bg-black/20 border border-white/10 focus:border-[#D4AF37] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-sm text-white placeholder-slate-600 focus:bg-black/40 resize-none backdrop-blur-sm"
-                  placeholder="Describe your restoration goals or service requirements..."
+                  placeholder={t('contact.form.inquiry.placeholder')}
                 />
               </div>
 
@@ -191,7 +191,7 @@ export function Contact() {
                 disabled={isSubmitting}
                 className="w-full mt-4 flex justify-center items-center py-4 px-6 rounded-sm text-sm font-semibold tracking-widest uppercase text-white bg-[#D4AF37]/20 border border-[#D4AF37]/50 hover:bg-[#D4AF37] hover:text-slate-950 transition-all disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none backdrop-blur-sm hover:shadow-[0_4px_20px_rgba(245,158,11,0.6)]"
               >
-                {isSubmitting ? 'Transmitting...' : 'Submit Inquiry'}
+                {isSubmitting ? t('contact.form.transmitting') : t('contact.form.submitInquiry')}
               </button>
             </form>
           )}

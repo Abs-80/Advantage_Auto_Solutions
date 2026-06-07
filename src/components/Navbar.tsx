@@ -37,22 +37,24 @@ export function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                className={({ isActive }) =>
-                  `text-sm font-medium transition-colors hover:text-white ${
-                    isActive ? 'text-white' : 'text-slate-400'
-                  }`
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
+          <div className="hidden md:flex items-center h-full space-x-8">
+            <div className="flex items-center h-full space-x-8">
+              {navLinks.map((link) => (
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  className={({ isActive }) =>
+                    `text-sm font-medium transition-all hover:text-white flex items-center h-[70px] border-b-2 relative ${
+                      isActive ? 'text-white border-amber-500 drop-shadow-[0_0_15px_rgba(245,158,11,0.8)]' : 'text-slate-400 border-transparent'
+                    }`
+                  }
+                >
+                  {link.label}
+                </NavLink>
+              ))}
+            </div>
             
-            <div className="flex items-center gap-3 text-xs font-bold text-slate-500">
+            <div className="flex items-center gap-3 text-xs font-bold text-slate-500 pl-4">
               {['en', 'ar', 'zh'].map(lang => (
                 <button 
                   key={lang}
@@ -100,10 +102,10 @@ export function Navbar() {
                 to={link.to}
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  `block pl-3 pr-4 py-2 text-base font-medium transition-colors ${
+                  `block pl-3 pr-4 py-2 text-base font-medium transition-colors border-l-4 ${
                     isActive
-                      ? 'text-white bg-white/10'
-                      : 'text-slate-400 hover:text-white hover:bg-white/5'
+                      ? 'text-white bg-amber-500/10 border-amber-500'
+                      : 'text-slate-400 border-transparent hover:text-white border-transparent hover:bg-white/5'
                   }`
                 }
               >

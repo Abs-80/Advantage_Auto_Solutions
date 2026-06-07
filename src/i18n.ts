@@ -24,14 +24,17 @@ const resources = {
       "services.title": "Our Solutions",
       "services.desc": "Maneuver through our product catalog. Request localized quotes suited perfectly to your market needs.",
       
-      "service.consulting.title": "Consulting Solutions",
-      "service.consulting.desc": "Optimize operations and embrace cutting-edge technologies to unlock untapped automotive opportunities.",
+      "service.healthcheck.title": "Departmental Healthcheck",
+      "service.healthcheck.desc": "Detailed operational assessments identifying efficiency gaps and data analysis that generate custom KPI-driven action plans that deliver measurable performance improvements.",
       
-      "service.recruitment.title": "Recruitment Services",
-      "service.recruitment.desc": "Discover top global talent that understands the specific challenges & nuances of the automotive industry.",
+      "service.warranty.title": "Warranty Consulting",
+      "service.warranty.desc": "Strategic warranty claim optimization and compliance auditing that increases accuracy and maximises departmental revenue against manufacturers approved methodologies.",
       
-      "service.training.title": "Training & Development",
-      "service.training.desc": "Empower your team with advanced industry strategies and measurable growth-oriented training paradigms.",
+      "service.staffing.title": "Staffing Solutions",
+      "service.staffing.desc": "Specialized recruitment and interim management for dealerships and OEMs. Placing high-performing technical specialists and executives with premium automotive experience across a global footprint.",
+      
+      "service.sourcing.title": "Vehicle Sourcing & Logistics",
+      "service.sourcing.desc": "End-to-end sourcing and transportation of luxury & specialist vehicles with secure global shipping networks, customs expertise, and specialized handling for high-value assets across international markets.",
       
       "action.requestQuote": "Get in Contact",
       
@@ -43,6 +46,21 @@ const resources = {
       "contact.form.service.general": "General Inquiry",
       "contact.form.message": "Your Message",
       "contact.form.submit": "Send Inquiry",
+      
+      "contact.title.custom": "Commission a Consultation",
+      "contact.subtitle.custom": "Begin the restoration journey",
+      "contact.success.title": "Transmission Successful",
+      "contact.success.desc": "Thank you for your inquiry. Our specialists will review your project details and contact you to schedule a consultation.",
+      "contact.error.msg": "An error occurred during transmission. Please ensure your connection is stable and try again.",
+      "contact.form.fullName": "Full Name",
+      "contact.form.fullName.placeholder": "E.g. John Doe",
+      "contact.form.email.placeholder": "E.g. john@example.com",
+      "contact.form.phone": "Phone Number",
+      "contact.form.phone.placeholder": "+1 (555) 000-0000",
+      "contact.form.inquiry": "Project Inquiry",
+      "contact.form.inquiry.placeholder": "Describe your restoration goals or service requirements...",
+      "contact.form.transmitting": "Transmitting...",
+      "contact.form.submitInquiry": "Submit Inquiry",
 
       "opp.title": "Current Opportunities",
       "opp.job.title": "High-Earning Automotive Aftersales Roles Across the UK",
@@ -51,13 +69,13 @@ const resources = {
       "opp.job.req.1": "Qualification: NVQ Level 3 or equivalent technician certification (or higher). Experienced Aftersales Management, Workshop Control and Advisory Personnel.",
       "opp.job.req.2": "Status: Unrestricted Right to Work in the UK.",
       "opp.job.req.3": "Goal: Seeking a permanent, long-term position.",
-      "opp.job.why.title": "Why Join Our Client?",
+      "opp.job.why.title": "Why Join Us?",
       "opp.job.why.1": "Exceptional Earning Potential: Highly competitive packages with attractive, uncapped bonus structures. Your hard work directly translates to your pay slip!",
       "opp.job.why.2": "Career Progression: Access to state-of-the-art facilities, ongoing training, and a clear path for professional development.",
       "opp.job.why.3": "Commitment: Work for an automotive group that truly invests in its technicians.",
       "opp.job.locations": "Immediate Openings in Locations Including: Watford, Hatfield, Cambridge, Chester, Farnborough, Basingstoke, Manchester, Sevenoaks, Liverpool, Guildford, and more!",
       "opp.job.apply.title": "Ready to Drive Your Career Forward? Apply Now!",
-      "opp.job.apply.desc": "These highly sought-after roles are being filled immediately. To apply, please use the contact button above to get in touch with our team with your CV (in Word format) including your preferred geographical working area, latest contact details, current package, and availability.",
+      "opp.job.apply.desc": "These highly sought-after roles are being filled immediately.",
       "opp.job.email": "registeryourcv@advantageautomotivesolutions.com",
       "opp.job.call": "We will arrange an initial confidential call to discuss the best roles for you!",
       
@@ -85,14 +103,17 @@ const resources = {
       "services.title": "حلولنا",
       "services.desc": "تصفح عبر كتالوج منتجاتنا. اطلب عروض أسعار محلية تناسب احتياجات السوق الخاصة بك تمامًا.",
       
-      "service.consulting.title": "حلول استشارية",
-      "service.consulting.desc": "تحسين العمليات وتبني أحدث التقنيات لفتح فرص للسيارات غير مستغلة.",
+      "service.healthcheck.title": "الفحص الصحي للأقسام",
+      "service.healthcheck.desc": "تقييمات تشغيلية مفصلة تحدد فجوات الكفاءة وتحليل البيانات الذي يولد خطط عمل مخصصة تعتمد على مؤشرات الأداء الرئيسية التي تقدم تحسينات أداء قابلة للقياس.",
       
-      "service.recruitment.title": "خدمات التوظيف",
-      "service.recruitment.desc": "اكتشف أفضل المواهب العالمية التي تفهم التحديات والفروق الدقيقة في صناعة السيارات.",
+      "service.warranty.title": "استشارات الضمان",
+      "service.warranty.desc": "التحسين الاستراتيجي لمطالبات الضمان وتدقيق الامتثال الذي يزيد من الدقة ويزيد من إيرادات القسم مقابل المنهجيات المعتمدة من الشركات المصنعة.",
       
-      "service.training.title": "التدريب والتطوير",
-      "service.training.desc": "مكّن فريقك باستراتيجيات الصناعة المتقدمة ونماذج التدريب الموجهة نحو النمو القابل للقياس.",
+      "service.staffing.title": "حلول التوظيف",
+      "service.staffing.desc": "توظيف متخصص وإدارة مؤقتة للوكلاء والشركات المصنعة للمعدات الأصلية. وضع أخصائيين تقنيين وتنفيذيين ذوي أداء عالٍ مع خبرة سيارات متميزة عبر نطاق عالمي.",
+      
+      "service.sourcing.title": "توفير المركبات والخدمات اللوجستية",
+      "service.sourcing.desc": "توفير ونقل شامل للمركبات الفاخرة والمتخصصة مع شبكات شحن عالمية آمنة، وخبرة جمركية، وتعامل متخصص مع الأصول عالية القيمة عبر الأسواق الدولية.",
       
       "action.requestQuote": "تواصل معنا",
       
@@ -104,6 +125,21 @@ const resources = {
       "contact.form.service.general": "استفسار عام",
       "contact.form.message": "رسالتك",
       "contact.form.submit": "إرسال استفسار",
+      
+      "contact.title.custom": "طلب استشارة",
+      "contact.subtitle.custom": "ابدأ رحلة الترميم",
+      "contact.success.title": "تم الإرسال بنجاح",
+      "contact.success.desc": "شكرا لاستفسارك. سيقوم المتخصصون لدينا بمراجعة تفاصيل مشروعك والاتصال بك لتحديد موعد للاستشارة.",
+      "contact.error.msg": "حدث خطأ أثناء الإرسال. يرجى التأكد من استقرار اتصالك والمحاولة مرة أخرى.",
+      "contact.form.fullName": "الاسم الكامل",
+      "contact.form.fullName.placeholder": "مثال: جون دو",
+      "contact.form.email.placeholder": "مثال: john@example.com",
+      "contact.form.phone": "رقم الهاتف",
+      "contact.form.phone.placeholder": "+1 (555) 000-0000",
+      "contact.form.inquiry": "استفسار عن المشروع",
+      "contact.form.inquiry.placeholder": "صف أهداف الترميم الخاصة بك أو متطلبات الخدمة...",
+      "contact.form.transmitting": "جاري الإرسال...",
+      "contact.form.submitInquiry": "إرسال الاستفسار",
 
       "opp.title": "الفرص الحالية",
       "opp.job.title": "أدوار ما بعد البيع للسيارات ذات الدخل المرتفع في جميع أنحاء المملكة المتحدة",
@@ -112,7 +148,7 @@ const resources = {
       "opp.job.req.1": "المؤهلات: شهادة فني مستوى NVQ 3 أو ما يعادلها (أو أعلى). خبرة في إدارة ما بعد البيع، والتحكم في الورش، والكوادر الاستشارية.",
       "opp.job.req.2": "الحالة: حق غير مقيد في العمل في المملكة المتحدة.",
       "opp.job.req.3": "الهدف: البحث عن وظيفة دائمة وطويلة الأجل.",
-      "opp.job.why.title": "لماذا الانضمام إلى عميلنا؟",
+      "opp.job.why.title": "لماذا الانضمام إلينا؟",
       "opp.job.why.1": "إمكانات كسب استثنائية: حزم تنافسية للغاية مع هياكل مكافآت جذابة وغير محدودة. يترجم عملك الجاد مباشرة إلى راتبك!",
       "opp.job.why.2": "التقدم الوظيفي: الوصول إلى مرافق حديثة وتدريب مستمر ومسار واضح للتطوير المهني.",
       "opp.job.why.3": "الالتزام: العمل في مجموعة سيارات تستثمر حقًا في الفنيين لديها.",
@@ -146,14 +182,17 @@ const resources = {
       "services.title": "我们的解决方案",
       "services.desc": "浏览我们的产品目录。索取完全符合您市场需求的本地化报价。",
       
-      "service.consulting.title": "咨询解决方案",
-      "service.consulting.desc": "优化运营并采用前沿技术，释放尚未开发的汽车行业机遇。",
+      "service.healthcheck.title": "部门健康检查",
+      "service.healthcheck.desc": "详细的运营评估，识别效率差距和数据分析，生成以KPI驱动的定制行动计划，实现可衡量的绩效改进。",
       
-      "service.recruitment.title": "招聘服务",
-      "service.recruitment.desc": "发掘了解汽车行业面临的特定挑战与细节的全球顶尖人才。",
+      "service.warranty.title": "保修咨询",
+      "service.warranty.desc": "战略保修索赔优化和合规审计，提高准确性，并根据制造商批准的方法最大化部门收入。",
       
-      "service.training.title": "培训与发展",
-      "service.training.desc": "用先进的行业战略和以可衡量增长为导向的培训模式武装您的团队。",
+      "service.staffing.title": "人员配备解决方案",
+      "service.staffing.desc": "为经销商和汽车原始设备制造商提供专业的招聘和过渡管理。在全球范围内安排具有丰富汽车经验的高绩效技术专家和高管。",
+      
+      "service.sourcing.title": "车辆采购与物流",
+      "service.sourcing.desc": "通过安全的全球运输网络、海关专业知识和在国际市场上对高价值资产的专业处理，提供豪华和特种车辆的端到端采购和运输。",
       
       "action.requestQuote": "联系我们",
       
@@ -165,6 +204,21 @@ const resources = {
       "contact.form.service.general": "一般咨询",
       "contact.form.message": "您的留言",
       "contact.form.submit": "发送咨询",
+      
+      "contact.title.custom": "预约咨询",
+      "contact.subtitle.custom": "开启修复之旅",
+      "contact.success.title": "发送成功",
+      "contact.success.desc": "感谢您的查询。我们的专家将审查您的项目详细信息并与您联系安排咨询。",
+      "contact.error.msg": "传输过程中发生错误。请确保您的连接稳定并重试。",
+      "contact.form.fullName": "全名",
+      "contact.form.fullName.placeholder": "例如：约翰·多恩",
+      "contact.form.email.placeholder": "例如：john@example.com",
+      "contact.form.phone": "电话号码",
+      "contact.form.phone.placeholder": "+1 (555) 000-0000",
+      "contact.form.inquiry": "项目咨询",
+      "contact.form.inquiry.placeholder": "描述您的修复目标或服务要求...",
+      "contact.form.transmitting": "发送中...",
+      "contact.form.submitInquiry": "提交查询",
 
       "opp.title": "当前的工作机会",
       "opp.job.title": "全英高收益汽车售后服务职位",
@@ -173,7 +227,7 @@ const resources = {
       "opp.job.req.1": "资格：NVQ 3级或同等技术人员认证（或更高级别）。经验丰富的售后管理、车间控制和咨询人员。",
       "opp.job.req.2": "身份：拥有在英国的无限制工作权利。",
       "opp.job.req.3": "目标：寻求长期的固定职位。",
-      "opp.job.why.title": "为何加入我们的客户？",
+      "opp.job.why.title": "为何加入我们？",
       "opp.job.why.1": "卓越的收入潜力：极具竞争力的套餐，带有吸引力的无上限奖金结构。您的辛勤工作直接转化为您的工资！",
       "opp.job.why.2": "职业发展：使用最先进的设施，提供持续的培训，以及清晰的职业发展路径。",
       "opp.job.why.3": "承诺：为一个真正投资其技术人员的汽车集团工作。",

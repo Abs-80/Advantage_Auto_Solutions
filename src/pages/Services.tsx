@@ -44,7 +44,7 @@ export function Services() {
 
       {/* Services Grid */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {servicesData.map((service, index) => {
             const Icon = Icons[service.iconName] as React.ElementType;
             return (
@@ -61,12 +61,6 @@ export function Services() {
                   <p className="text-sm text-slate-400 m-0 leading-relaxed font-light">
                     {t(service.descKey)}
                   </p>
-                   <Link
-                     to={`/contact?service=${service.id}`}
-                     className="mt-auto w-full bg-white/5 hover:bg-white/10 text-white p-3 rounded-lg font-medium text-sm text-center transition-all flex items-center justify-center border border-white/5 hover:shadow-[0_4px_20px_rgba(245,158,11,0.6)] hover:border-amber-500/50"
-                   >
-                     {t('action.requestQuote')}
-                   </Link>
               </motion.div>
             );
           })}

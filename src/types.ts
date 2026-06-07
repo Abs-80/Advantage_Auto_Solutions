@@ -2,26 +2,32 @@ export interface ServiceInfo {
   id: string;
   titleKey: string;
   descKey: string;
-  iconName: "Target" | "Users" | "GraduationCap";
+  iconName: string;
 }
 
 export const servicesData: ServiceInfo[] = [
   {
-    id: "consulting",
-    titleKey: "service.consulting.title",
-    descKey: "service.consulting.desc",
-    iconName: "Target",
+    id: "healthcheck",
+    titleKey: "service.healthcheck.title",
+    descKey: "service.healthcheck.desc",
+    iconName: "Activity",
   },
   {
-    id: "recruitment",
-    titleKey: "service.recruitment.title",
-    descKey: "service.recruitment.desc",
+    id: "warranty",
+    titleKey: "service.warranty.title",
+    descKey: "service.warranty.desc",
+    iconName: "ShieldCheck",
+  },
+  {
+    id: "staffing",
+    titleKey: "service.staffing.title",
+    descKey: "service.staffing.desc",
     iconName: "Users",
   },
   {
-    id: "training",
-    titleKey: "service.training.title",
-    descKey: "service.training.desc",
-    iconName: "GraduationCap",
+    id: "sourcing",
+    titleKey: "service.sourcing.title",
+    descKey: "service.sourcing.desc",
+    iconName: "Globe",
   }
 ];

@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'motion/react';
-import { ShieldCheck, MapPin, BarChart3, ChevronRight, Linkedin, User, Calendar } from 'lucide-react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
+import { ShieldCheck, MapPin, BarChart3, ChevronRight, Linkedin, User, Calendar, X } from 'lucide-react';
 
-function SheenCard({ children, className = "", innerClassName = "" }: { children: React.ReactNode, className?: string, innerClassName?: string }) {
+const SheenCard: React.FC<{ children: React.ReactNode, className?: string, innerClassName?: string }> = ({ children, className = "", innerClassName = "" }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -33,14 +33,18 @@ function SheenCard({ children, className = "", innerClassName = "" }: { children
   );
 }
 
-function LeadershipCard({ member }: { member: { name: string, role: string, linkedin: string } }) {
+const LeadershipCard: React.FC<{ member: { name: string, role: string, linkedin: string, image?: string } }> = ({ member }) => {
   return (
     <SheenCard 
       className="bg-slate-900 border border-white/5 rounded-2xl p-8 hover:border-amber-500/30 hover:bg-slate-800/50 shadow-lg"
       innerClassName="flex flex-col items-center text-center"
     >
       <div className="w-28 h-28 bg-slate-950 rounded-full mb-6 flex items-center justify-center border-2 border-white/10 overflow-hidden shadow-inner">
-        <User className="w-10 h-10 text-slate-600" />
+        {member.image ? (
+          <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+        ) : (
+          <User className="w-10 h-10 text-slate-600" />
+        )}
       </div>
       <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
       <p className="text-sm font-semibold tracking-wide text-amber-500 uppercase mb-8">{member.role}</p>
@@ -54,6 +58,23 @@ function LeadershipCard({ member }: { member: { name: string, role: string, link
 
 export function Home() {
   const { t } = useTranslation();
+  const [selectedPost, setSelectedPost] = useState<{title: string, content: string | React.ReactNode, date: string} | null>(null);
+
+  const getRelativeTime = (dateString: string) => {
+    const parts = dateString.split('-');
+    if (parts.length !== 3) return dateString;
+    
+    const [year, month, day] = parts.map(Number);
+    const postTime = Date.UTC(year, month - 1, day);
+    const currentDate = new Date();
+    const currentTime = Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+    const diffDays = Math.floor((currentTime - postTime) / (1000 * 60 * 60 * 24));
+    
+    if (diffDays === 0) return 'Today';
+    if (diffDays === 1) return '1 day ago';
+    if (diffDays > 0) return `${diffDays} days ago`;
+    return dateString;
+  };
 
   return (
     <div className="w-full">
@@ -143,8 +164,13 @@ export function Home() {
       </section>
 
       {/* Our Team / Leadership */}
-      <section className="py-24 bg-slate-900 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 border-b border-slate-800 relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 mix-blend-luminosity"
+          style={{ backgroundImage: 'url(/LF8_6659_1.jpg)' }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-display font-bold text-white mb-4 tracking-tight">Our Leadership</h2>
             <p className="text-slate-400 max-w-2xl mx-auto">Meet the experts driving Advantage Automotive Solutions forward.</p>
@@ -162,8 +188,54 @@ export function Home() {
       </section>
 
       {/* Global Reach Section */}
-      <section className="py-20 bg-slate-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-slate-950 relative overflow-hidden">
+        
+        {/* Abstract Map Background */}
+        <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+          <svg className="w-full h-full" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            {/* Grid */}
+            <g stroke="#ffffff" strokeWidth="1" strokeDasharray="2 6" opacity="0.1">
+              <path d="M0 50 H1000 M0 100 H1000 M0 150 H1000 M0 200 H1000 M0 250 H1000 M0 300 H1000 M0 350 H1000 M0 400 H1000 M0 450 H1000" />
+              <path d="M100 0 V500 M200 0 V500 M300 0 V500 M400 0 V500 M500 0 V500 M600 0 V500 M700 0 V500 M800 0 V500 M900 0 V500" />
+            </g>
+            
+            {/* Nodes - Regions */}
+            {/* North America */}
+            <g transform="translate(180, 160)">
+              <circle cx="0" cy="0" r="6" fill="#F59E0B" opacity="0.8"/>
+              <circle cx="0" cy="0" r="20" stroke="#F59E0B" strokeWidth="1" fill="none" opacity="0.4" />
+              <circle cx="0" cy="0" r="35" stroke="#F59E0B" strokeWidth="0.5" fill="none" opacity="0.2" />
+            </g>
+            {/* Europe */}
+            <g transform="translate(480, 140)">
+              <circle cx="0" cy="0" r="5" fill="#F59E0B" opacity="0.8"/>
+              <circle cx="0" cy="0" r="16" stroke="#F59E0B" strokeWidth="1" fill="none" opacity="0.4" />
+            </g>
+            {/* Middle East */}
+            <g transform="translate(560, 240)">
+              <circle cx="0" cy="0" r="6" fill="#F59E0B" opacity="0.8"/>
+              <circle cx="0" cy="0" r="18" stroke="#F59E0B" strokeWidth="1" fill="none" opacity="0.4" />
+            </g>
+            {/* Asia */}
+            <g transform="translate(760, 200)">
+              <circle cx="0" cy="0" r="7" fill="#F59E0B" opacity="0.8"/>
+              <circle cx="0" cy="0" r="22" stroke="#F59E0B" strokeWidth="1" fill="none" opacity="0.4" />
+              <circle cx="0" cy="0" r="40" stroke="#F59E0B" strokeWidth="0.5" fill="none" opacity="0.2" />
+            </g>
+
+            {/* Connecting Lines */}
+            <path d="M180 160 Q 330 110 480 140" stroke="#F59E0B" strokeWidth="1.5" fill="none" opacity="0.4" strokeDasharray="4 4" />
+            <path d="M480 140 Q 520 190 560 240" stroke="#F59E0B" strokeWidth="1.5" fill="none" opacity="0.4" strokeDasharray="4 4" />
+            <path d="M560 240 Q 660 220 760 200" stroke="#F59E0B" strokeWidth="1.5" fill="none" opacity="0.4" strokeDasharray="4 4" />
+            <path d="M180 160 Q 470 380 760 200" stroke="#F59E0B" strokeWidth="1" fill="none" opacity="0.2" strokeDasharray="2 4" />
+            
+            <path d="M480 140 Q 620 100 760 200" stroke="#F59E0B" strokeWidth="1" fill="none" opacity="0.2" strokeDasharray="2 4" />
+          </svg>
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-transparent to-slate-950"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 items-start">
             <div>
               <div className="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mb-8 border border-amber-500/20 shadow-sm">
@@ -178,7 +250,7 @@ export function Home() {
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {['Middle East', 'Asia', 'North America', 'Europe / UK'].map((region) => (
-                  <div key={region} className="bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10 text-center text-sm font-bold text-slate-300 shadow-sm hover:border-amber-500/50 hover:bg-white/10 transition-all cursor-default hover:shadow-[0_4px_20px_rgba(245,158,11,0.6)]">
+                  <div key={region} className="bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10 text-center text-sm font-bold text-slate-300">
                     {region}
                   </div>
                 ))}
@@ -202,7 +274,7 @@ export function Home() {
                     to="/contact" 
                     className="mt-6 w-full inline-flex items-center justify-center px-4 py-3 text-sm font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-lg transition-all relative z-10 hover:shadow-[0_4px_20px_rgba(245,158,11,0.6)]"
                   >
-                    Set up an Inquiry
+                    {t('contact.title')}
                   </Link>
                </SheenCard>
             </div>
@@ -225,25 +297,96 @@ export function Home() {
           
           <div className="space-y-6">
             {[
-              { date: 'June 2026', title: 'Expansion into the North American Market', content: 'We are thrilled to announce our new dedicated branch for North America, providing localized support for our clients in the US and Canada. This allows us to offer 24-hour coverage and faster deployment of technical recruitment strategies.' },
-              { date: 'May 2026', title: 'Global Automotive Summit 2026', content: 'Our directors recently participated at the Global Automotive Summit in Dubai, sharing key insights on the future of aftersales performance, efficiency metrics, and the rising demand for EV technicians.' },
-              { date: 'April 2026', title: 'New Training Programs Launched', content: 'Introduced an updated curriculum tailored specifically for High-Voltage Electric Vehicle handling and workshop advisory roles across our partner dealerships in the UK.' },
+              {
+                date: getRelativeTime('2026-06-06'),
+                title: 'Apply today: 🛠️ High-Earning Automotive Aftersales Roles Available Across the UK! 🚀',
+                shortDesc: 'Are you a skilled Passenger Car or LCV Aftersales Specialist looking for an immediate upgrade to your career and earning potential?',
+                content: (
+                  <div className="space-y-4">
+                    <p>Are you a skilled Passenger Car or Light Commercial Vehicle (LCV) Aftersales Specialist looking for an immediate upgrade to your career and earning potential?</p>
+                    <p>We are partnering with a renowned UK National Automotive Group to find top talent for multiple prestigious dealerships nationwide. If you're ready for uncapped earnings and a career path with a leading industry name, we want to hear from you!</p>
+                    
+                    <h4 className="text-lg font-bold text-white mt-6 mb-2">What We're Looking For:</h4>
+                    <ul className="list-disc pl-5 space-y-2 text-slate-300">
+                      <li><strong>Qualification:</strong> NVQ Level 3 or equivalent technician certification (or higher). Experienced Aftersales Management, Workshop Control and Advisory Personnel</li>
+                      <li><strong>Status:</strong> Unrestricted Right to Work in the UK.</li>
+                      <li><strong>Goal:</strong> Seeking a permanent, long-term position.</li>
+                    </ul>
+
+                    <h4 className="text-lg font-bold text-white mt-6 mb-2">Why Join Us? (Your Next Step Up):</h4>
+                    <ul className="list-disc pl-5 space-y-2 text-slate-300">
+                      <li>💰 <strong>Exceptional Earning Potential:</strong> Highly competitive packages with attractive, uncapped bonus structures. Your hard work directly translates to your pay slip!</li>
+                      <li>📈 <strong>Career Progression:</strong> Access to state-of-the-art facilities, ongoing training, and a clear path for professional development.</li>
+                      <li>⭐ <strong>Commitment:</strong> Work for an automotive group that truly invests in its technicians.</li>
+                    </ul>
+
+                    <p className="mt-6 mb-2"><strong>Immediate Openings in Locations Including:</strong><br/>Watford, Hatfield, Cambridge, Chester, Farnborough, Basingstoke, Manchester, Sevenoaks, Liverpool, Guildford...and many more!</p>
+
+                    <h4 className="text-lg font-bold text-white mt-6 mb-2">▶️ Ready to Drive Your Career Forward? Apply Now!</h4>
+                    <p>These highly sought-after roles are being filled immediately.</p>
+                    
+                    <p className="mt-4"><strong>To Apply:</strong> Please send your CV (in Word format) to:<br/>📧 <a href="mailto:registeryourcv@advantageautomotivesolutions.com" className="text-amber-500 hover:underline">registeryourcv@advantageautomotivesolutions.com</a></p>
+                    
+                    <p className="mt-4"><strong>Your application should include:</strong></p>
+                    <ul className="list-disc pl-5 space-y-1 text-slate-300">
+                      <li>Your preferred geographical working area.</li>
+                      <li>Latest contact details.</li>
+                      <li>Your current package and availability.</li>
+                    </ul>
+
+
+                  </div>
+                )
+              }
             ].map((post, i) => (
-              <SheenCard 
-                key={i} 
-                className="bg-slate-900 border border-white/5 rounded-2xl hover:border-amber-500/30 hover:bg-slate-900/80 shadow-sm"
-                innerClassName="p-6 md:p-8 flex flex-col md:flex-row gap-6 lg:gap-8"
-              >
-                 <div className="md:w-1/4 shrink-0 flex flex-col items-start pt-1">
-                    <span className="inline-block px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-xs font-bold tracking-widest uppercase text-amber-500 mb-2">{post.date}</span>
-                 </div>
-                 <div>
-                    <h3 className="text-xl font-display font-bold text-white mb-3">{post.title}</h3>
-                    <p className="text-slate-400 leading-relaxed text-sm">{post.content}</p>
-                 </div>
-              </SheenCard>
+              <div key={i} onClick={() => setSelectedPost({title: post.title, content: post.content, date: post.date})} className="cursor-pointer group">
+                <SheenCard 
+                  className="bg-slate-900 border border-white/5 rounded-2xl hover:border-amber-500/30 hover:bg-slate-900/80 shadow-sm"
+                  innerClassName="p-6 md:p-8 flex flex-col md:flex-row gap-6 lg:gap-8"
+                >
+                   <div className="md:w-1/4 shrink-0 flex flex-col items-start pt-1">
+                      <span className="inline-block px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-xs font-bold tracking-widest uppercase text-amber-500 mb-2">{post.date}</span>
+                   </div>
+                   <div>
+                      <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-amber-500 transition-colors">{post.title}</h3>
+                      <p className="text-slate-400 leading-relaxed text-sm">{post.shortDesc}</p>
+                   </div>
+                </SheenCard>
+              </div>
             ))}
           </div>
+          
+          <AnimatePresence>
+            {selectedPost && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={() => setSelectedPost(null)}
+                  className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm cursor-pointer"
+                />
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                  className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-slate-900 border border-white/10 rounded-2xl shadow-2xl p-6 md:p-10 z-[51] overscroll-contain"
+                >
+                  <button 
+                    onClick={() => setSelectedPost(null)}
+                    className="absolute top-4 right-4 p-2 text-slate-400 hover:text-white hover:bg-white/10 rounded-full transition-colors"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+                  <span className="inline-block px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-xs font-bold tracking-widest uppercase text-amber-500 mb-6">{selectedPost.date}</span>
+                  <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-8">{selectedPost.title}</h2>
+                  <div className="text-slate-400 leading-relaxed text-sm md:text-base max-w-none">
+                    {selectedPost.content}
+                  </div>
+                </motion.div>
+              </div>
+            )}
+          </AnimatePresence>
         </div>
       </section>
     </div>
