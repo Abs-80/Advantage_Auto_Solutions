@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
-import { ShieldCheck, MapPin, BarChart3, ChevronRight, Calendar, X } from 'lucide-react';
+import { ShieldCheck, MapPin, BarChart3, ChevronRight, Calendar, X, Linkedin, Award } from 'lucide-react';
 
 const SheenCard: React.FC<{ children: React.ReactNode, className?: string, innerClassName?: string }> = ({ children, className = "", innerClassName = "" }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -129,13 +129,31 @@ export function Home() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-[540px]">
-            <h2 className="text-3xl font-display font-bold text-white mb-6 tracking-tight drop-shadow-md">
-              {t('about.title')}
-            </h2>
-            <p className="text-slate-300 leading-relaxed text-lg drop-shadow-sm">
-              {t('about.desc')}
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+            <div className="max-w-[540px]">
+              <h2 className="text-3xl font-display font-bold text-white mb-6 tracking-tight drop-shadow-md">
+                {t('about.title')}
+              </h2>
+              <p className="text-slate-300 leading-relaxed text-lg drop-shadow-sm">
+                {t('about.desc')}
+              </p>
+            </div>
+            
+            <div className="flex justify-start lg:justify-end">
+              <SheenCard 
+                className="bg-slate-900 border border-white/5 rounded-2xl p-8 hover:border-amber-500/30 hover:bg-slate-800/50 shadow-xl max-w-[360px] w-full"
+                innerClassName="flex flex-col justify-center text-left"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2"></div>
+                <div className="flex items-center space-x-3 mb-4 relative z-10 w-full text-left">
+                   <BarChart3 className="w-6 h-6 text-amber-500" />
+                   <h3 className="text-lg font-display font-bold text-white">Performance</h3>
+                </div>
+                <p className="text-sm text-slate-400 leading-relaxed relative z-10 w-full text-left">
+                  "Because when your performance accelerates, so does ours."
+                </p>
+              </SheenCard>
+            </div>
           </div>
         </div>
       </section>
@@ -214,22 +232,22 @@ export function Home() {
             <div className="relative isolate flex justify-center lg:justify-end w-full">
                <SheenCard 
                   className="w-full bg-slate-900/40 backdrop-blur-xl rounded-2xl border border-white/5 shadow-2xl"
-                  innerClassName="p-8"
+                  innerClassName="p-8 flex flex-col items-center text-center"
                >
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2"></div>
-                  <div className="flex items-center space-x-3 mb-4 relative z-10">
-                     <BarChart3 className="w-6 h-6 text-amber-500" />
-                     <h3 className="text-lg font-display font-bold text-white">Performance</h3>
+                  <div className="w-24 h-24 bg-slate-950 rounded-full mb-6 flex items-center justify-center border-2 border-white/10 overflow-hidden shadow-inner shrink-0 relative z-10">
+                     <img src="/1708617744518.jpeg" alt="Paul Chapman" className="w-full h-full object-cover" />
                   </div>
-                  <p className="text-sm text-slate-400 leading-relaxed relative z-10">
-                    "Because when your performance accelerates, so does ours."
-                  </p>
-                  <Link 
-                    to="/contact" 
-                    className="mt-6 w-full inline-flex items-center justify-center px-4 py-3 text-sm font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-lg transition-all relative z-10 hover:shadow-[0_4px_20px_rgba(245,158,11,0.6)]"
-                  >
-                    {t('contact.title')}
-                  </Link>
+                  <div className="relative inline-flex items-center justify-center mb-1 z-10">
+                    <div className="absolute right-full mr-3 text-amber-500 drop-shadow-lg">
+                      <Award className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white z-10">Paul Chapman</h3>
+                  </div>
+                  <p className="text-xs font-semibold tracking-wide text-amber-500 uppercase mb-6 z-10 leading-relaxed max-w-[280px]">Global Automotive Aftersales Executive | Technical Service & Operations Leader | OEM & Dealer Network Transformation Specialist</p>
+                  <a href="https://www.linkedin.com/in/paul-chapman-ba3462143/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-4 py-3 bg-[#0A66C2]/10 border border-[#0A66C2]/30 hover:bg-[#0A66C2] hover:border-[#0A66C2] text-white text-sm font-bold rounded-lg transition-all w-full hover:shadow-[0_4px_20px_rgba(245,158,11,0.6)] relative z-10">
+                    <Linkedin className="w-4 h-4 mr-2" />
+                    Connect on LinkedIn
+                  </a>
                </SheenCard>
             </div>
           </div>
