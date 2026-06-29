@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
-import { CheckCircle2, AlertCircle } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Linkedin } from 'lucide-react';
 
 export function Contact() {
   const { t } = useTranslation();
@@ -193,6 +193,22 @@ export function Contact() {
               >
                 {isSubmitting ? t('contact.form.transmitting') : t('contact.form.submitInquiry')}
               </button>
+              
+              <div className="relative flex items-center py-2">
+                <div className="flex-grow border-t border-white/10"></div>
+                <span className="flex-shrink-0 mx-4 text-xs text-slate-500 uppercase tracking-widest">Or</span>
+                <div className="flex-grow border-t border-white/10"></div>
+              </div>
+              
+              <a 
+                href="https://www.linkedin.com/company/advantage-automotive-solutions-wll/posts/?feedView=all" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-flex items-center justify-center px-4 py-4 bg-[#0A66C2]/10 border border-[#0A66C2]/30 hover:bg-[#0A66C2] hover:border-[#0A66C2] text-white text-sm font-bold tracking-widest uppercase rounded-sm transition-all w-full hover:shadow-[0_4px_20px_rgba(10,102,194,0.4)] backdrop-blur-sm"
+              >
+                <Linkedin className="w-5 h-5 mr-3" />
+                Connect on LinkedIn
+              </a>
             </form>
           )}
         </motion.div>

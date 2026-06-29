@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
-import { ShieldCheck, MapPin, BarChart3, ChevronRight, Calendar, X, Linkedin, Award } from 'lucide-react';
+import { ShieldCheck, MapPin, BarChart3, ChevronRight, Calendar, X } from 'lucide-react';
 
 const SheenCard: React.FC<{ children: React.ReactNode, className?: string, innerClassName?: string }> = ({ children, className = "", innerClassName = "" }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -208,47 +208,23 @@ export function Home() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 items-start">
-            <div>
-              <div className="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mb-8 border border-amber-500/20 shadow-sm">
-                <MapPin className="w-6 h-6" />
-              </div>
-              <h2 className="text-3xl font-display font-bold text-white mb-6 tracking-tight">
-                {t('global.title')}
-              </h2>
-              <p className="text-slate-400 leading-relaxed mb-8 max-w-[540px]">
-                {t('global.desc')}
-              </p>
-              
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {['Middle East', 'Asia', 'North America', 'Europe / UK'].map((region) => (
-                  <div key={region} className="bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10 text-center text-sm font-bold text-slate-300">
-                    {region}
-                  </div>
-                ))}
-              </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mb-8 border border-amber-500/20 shadow-sm">
+              <MapPin className="w-6 h-6" />
             </div>
+            <h2 className="text-3xl font-display font-bold text-white mb-6 tracking-tight">
+              {t('global.title')}
+            </h2>
+            <p className="text-slate-400 leading-relaxed mb-8 max-w-[540px]">
+              {t('global.desc')}
+            </p>
             
-            <div className="relative isolate flex justify-center lg:justify-end w-full">
-               <SheenCard 
-                  className="w-full bg-slate-900/40 backdrop-blur-xl rounded-2xl border border-white/5 shadow-2xl"
-                  innerClassName="p-8 flex flex-col items-center text-center"
-               >
-                  <div className="w-24 h-24 bg-slate-950 rounded-full mb-6 flex items-center justify-center border-2 border-white/10 overflow-hidden shadow-inner shrink-0 relative z-10">
-                     <img src={`${import.meta.env.BASE_URL}1708617744518.jpeg`} alt="Paul Chapman" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="relative inline-flex items-center justify-center mb-1 z-10">
-                    <div className="absolute right-full mr-3 text-amber-500 drop-shadow-lg">
-                      <Award className="w-8 h-8" />
-                    </div>
-                    <h3 className="text-xl font-bold text-white z-10">Paul Chapman</h3>
-                  </div>
-                  <p className="text-xs font-semibold tracking-wide text-amber-500 uppercase mb-6 z-10 leading-relaxed max-w-[280px]">Global Automotive Aftersales Executive | Technical Service & Operations Leader | OEM & Dealer Network Transformation Specialist</p>
-                  <a href="https://www.linkedin.com/in/paul-chapman-ba3462143/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-4 py-3 bg-[#0A66C2]/10 border border-[#0A66C2]/30 hover:bg-[#0A66C2] hover:border-[#0A66C2] text-white text-sm font-bold rounded-lg transition-all w-full hover:shadow-[0_4px_20px_rgba(245,158,11,0.6)] relative z-10">
-                    <Linkedin className="w-4 h-4 mr-2" />
-                    Connect on LinkedIn
-                  </a>
-               </SheenCard>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {['Middle East', 'Asia', 'North America', 'Europe / UK'].map((region) => (
+                <div key={region} className="bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10 text-center text-sm font-bold text-slate-300">
+                  {region}
+                </div>
+              ))}
             </div>
           </div>
         </div>
