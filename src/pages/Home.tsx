@@ -107,7 +107,7 @@ export function Home() {
                 to="/opportunities" 
                 className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold text-white bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-lg border border-white/20 transition-all shadow-lg hover:shadow-[0_4px_20px_rgba(245,158,11,0.6)] hover:-translate-y-0.5"
               >
-                View Opportunities
+                {t('hero.cta.opportunities')}
               </Link>
             </motion.div>
           </div>
@@ -147,10 +147,10 @@ export function Home() {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2"></div>
                 <div className="flex items-center space-x-3 mb-4 relative z-10 w-full text-left">
                    <BarChart3 className="w-6 h-6 text-amber-500" />
-                   <h3 className="text-lg font-display font-bold text-white">Performance</h3>
+                   <h3 className="text-lg font-display font-bold text-white">{t('about.performance.title')}</h3>
                 </div>
                 <p className="text-sm text-slate-400 leading-relaxed relative z-10 w-full text-left">
-                  "Because when your performance accelerates, so does ours."
+                  "{t('about.performance.desc')}"
                 </p>
               </SheenCard>
             </div>
@@ -220,9 +220,9 @@ export function Home() {
             </p>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {['Middle East', 'Asia', 'North America', 'Europe / UK'].map((region) => (
-                <div key={region} className="bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10 text-center text-sm font-bold text-slate-300">
-                  {region}
+              {['middleEast', 'asia', 'northAmerica', 'europeUK'].map((regionKey) => (
+                <div key={regionKey} className="bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10 text-center text-sm font-bold text-slate-300">
+                  {t(`global.regions.${regionKey}`)}
                 </div>
               ))}
             </div>
@@ -235,8 +235,8 @@ export function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-12">
             <div>
-              <h2 className="text-3xl font-display font-bold text-white mb-2 tracking-tight">Our Journey</h2>
-              <p className="text-slate-400">Latest updates, events, and milestones.</p>
+              <h2 className="text-3xl font-display font-bold text-white mb-2 tracking-tight">{t('home.journey.title')}</h2>
+              <p className="text-slate-400">{t('home.journey.desc')}</p>
             </div>
             <div className="p-4 bg-amber-500/10 rounded-2xl border border-amber-500/20 shadow-inner">
                <Calendar className="w-7 h-7 text-amber-500"/>
@@ -247,42 +247,39 @@ export function Home() {
             {[
               {
                 date: getRelativeTime('2026-06-06'),
-                title: 'Apply today: 🛠️ High-Earning Automotive Aftersales Roles Available Across the UK! 🚀',
-                shortDesc: 'Are you a skilled Passenger Car or LCV Aftersales Specialist looking for an immediate upgrade to your career and earning potential?',
+                title: t('home.journey.post1.title'),
+                shortDesc: t('home.journey.post1.shortDesc'),
                 content: (
                   <div className="space-y-4">
-                    <p>Are you a skilled Passenger Car or Light Commercial Vehicle (LCV) Aftersales Specialist looking for an immediate upgrade to your career and earning potential?</p>
-                    <p>We are partnering with a renowned UK National Automotive Group to find top talent for multiple prestigious dealerships nationwide. If you're ready for uncapped earnings and a career path with a leading industry name, we want to hear from you!</p>
+                    <p>{t('opp.job.desc')}</p>
                     
-                    <h4 className="text-lg font-bold text-white mt-6 mb-2">What We're Looking For:</h4>
+                    <h4 className="text-lg font-bold text-white mt-6 mb-2">{t('opp.job.req.title')}:</h4>
                     <ul className="list-disc pl-5 space-y-2 text-slate-300">
-                      <li><strong>Qualification:</strong> NVQ Level 3 or equivalent technician certification (or higher). Experienced Aftersales Management, Workshop Control and Advisory Personnel</li>
-                      <li><strong>Status:</strong> Unrestricted Right to Work in the UK.</li>
-                      <li><strong>Goal:</strong> Seeking a permanent, long-term position.</li>
+                      <li>{t('opp.job.req.1')}</li>
+                      <li>{t('opp.job.req.2')}</li>
+                      <li>{t('opp.job.req.3')}</li>
                     </ul>
 
-                    <h4 className="text-lg font-bold text-white mt-6 mb-2">Why Join Us? (Your Next Step Up):</h4>
+                    <h4 className="text-lg font-bold text-white mt-6 mb-2">{t('opp.job.why.title')}</h4>
                     <ul className="list-disc pl-5 space-y-2 text-slate-300">
-                      <li>💰 <strong>Exceptional Earning Potential:</strong> Highly competitive packages with attractive, uncapped bonus structures. Your hard work directly translates to your pay slip!</li>
-                      <li>📈 <strong>Career Progression:</strong> Access to state-of-the-art facilities, ongoing training, and a clear path for professional development.</li>
-                      <li>⭐ <strong>Commitment:</strong> Work for an automotive group that truly invests in its technicians.</li>
+                      <li>{t('opp.job.why.1')}</li>
+                      <li>{t('opp.job.why.2')}</li>
+                      <li>{t('opp.job.why.3')}</li>
                     </ul>
 
-                    <p className="mt-6 mb-2"><strong>Immediate Openings in Locations Including:</strong><br/>Watford, Hatfield, Cambridge, Chester, Farnborough, Basingstoke, Manchester, Sevenoaks, Liverpool, Guildford...and many more!</p>
+                    <p className="mt-6 mb-2"><strong>{t('opp.job.locations')}</strong></p>
 
-                    <h4 className="text-lg font-bold text-white mt-6 mb-2">▶️ Ready to Drive Your Career Forward? Apply Now!</h4>
-                    <p>These highly sought-after roles are being filled immediately.</p>
+                    <h4 className="text-lg font-bold text-white mt-6 mb-2">▶️ {t('opp.job.apply.title')}</h4>
+                    <p>{t('opp.job.apply.desc')}</p>
                     
-                    <p className="mt-4"><strong>To Apply:</strong> Please send your CV (in Word format) to:<br/>📧 <a href="mailto:registeryourcv@advantageautomotivesolutions.com" className="text-amber-500 hover:underline">registeryourcv@advantageautomotivesolutions.com</a></p>
+                    <p className="mt-4"><strong>{t('opp.job.apply.email_intro')}</strong><br/>📧 <a href={`mailto:${t('opp.job.email')}`} className="text-amber-500 hover:underline">{t('opp.job.email')}</a></p>
                     
-                    <p className="mt-4"><strong>Your application should include:</strong></p>
+                    <p className="mt-4"><strong>{t('opp.job.apply.include_intro')}</strong></p>
                     <ul className="list-disc pl-5 space-y-1 text-slate-300">
-                      <li>Your preferred geographical working area.</li>
-                      <li>Latest contact details.</li>
-                      <li>Your current package and availability.</li>
+                      <li>{t('opp.job.apply.include_1')}</li>
+                      <li>{t('opp.job.apply.include_2')}</li>
+                      <li>{t('opp.job.apply.include_3')}</li>
                     </ul>
-
-
                   </div>
                 )
               }

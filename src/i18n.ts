@@ -14,12 +14,19 @@ const resources = {
       "hero.title": "Global Expertise, Local Impact.",
       "hero.subtitle": "Empowering automotive businesses through consulting, recruitment, and training solutions that tackle real-world challenges.",
       "hero.cta": "Discover Our Solutions",
+      "hero.cta.opportunities": "View Opportunities",
       
       "about.title": "90+ Years of Combined Global Expertise",
       "about.desc": "At Advantage Automotive Solutions, we live at the cutting-edge of innovation and industry know-how. From optimizing operations to embracing new technologies or unlocking untapped opportunities, our mission is to be more than just advisors — we're your global partners on the road to lasting success.",
+      "about.performance.title": "Performance",
+      "about.performance.desc": "Because when your performance accelerates, so does ours.",
       
       "global.title": "Global Reach, Timezone Ready",
       "global.desc": "Our team is based in key global hotspots across the Middle East, Asia, the USA & Canada, and Europe (including the UK), ensuring we are always able to support you in whichever timezone you operate.",
+      "global.regions.middleEast": "Middle East",
+      "global.regions.asia": "Asia",
+      "global.regions.northAmerica": "North America",
+      "global.regions.europeUK": "Europe / UK",
       
       "services.title": "Our Solutions",
       "services.desc": "Maneuver through our product catalog. Request localized quotes suited perfectly to your market needs.",
@@ -47,8 +54,8 @@ const resources = {
       "contact.form.message": "Your Message",
       "contact.form.submit": "Send Inquiry",
       
-      "contact.title.custom": "Commission a Consultation",
-      "contact.subtitle.custom": "Begin the restoration journey",
+      "contact.title.custom": "Get in Contact",
+      "contact.subtitle.custom": "Connect with us on LinkedIn",
       "contact.success.title": "Transmission Successful",
       "contact.success.desc": "Thank you for your inquiry. Our specialists will review your project details and contact you to schedule a consultation.",
       "contact.error.msg": "An error occurred during transmission. Please ensure your connection is stable and try again.",
@@ -64,6 +71,8 @@ const resources = {
 
       "opp.title": "Current Opportunities",
       "opp.job.title": "High-Earning Automotive Aftersales Roles Across the UK",
+      "opp.job.tag.new": "New",
+      "opp.job.tag.location": "UK Nationwide",
       "opp.job.desc": "Are you a skilled Passenger Car or Light Commercial Vehicle (LCV) Aftersales Specialist looking for an immediate upgrade to your career and earning potential? We are partnering with a renowned UK National Automotive Group to find top talent for multiple prestigious dealerships nationwide.",
       "opp.job.req.title": "What We're Looking For",
       "opp.job.req.1": "Qualification: NVQ Level 3 or equivalent technician certification (or higher). Experienced Aftersales Management, Workshop Control and Advisory Personnel.",
@@ -79,8 +88,22 @@ const resources = {
       "opp.job.email": "registeryourcv@advantageautomotivesolutions.com",
       "opp.job.call": "We will arrange an initial confidential call to discuss the best roles for you!",
       
+      "home.journey.title": "Our Journey",
+      "home.journey.desc": "Latest updates, events, and milestones.",
+      "home.journey.post1.title": "Apply today: 🛠️ High-Earning Automotive Aftersales Roles Available Across the UK! 🚀",
+      "home.journey.post1.shortDesc": "Are you a skilled Passenger Car or LCV Aftersales Specialist looking for an immediate upgrade to your career and earning potential?",
+      "opp.job.apply.email_intro": "To Apply: Please send your CV (in Word format) to:",
+      "opp.job.apply.include_intro": "Your application should include:",
+      "opp.job.apply.include_1": "Your preferred geographical working area.",
+      "opp.job.apply.include_2": "Latest contact details.",
+      "opp.job.apply.include_3": "Your current package and availability.",
+      
       "footer.insights": "Follow our page for insights, updates, and industry strategies.",
-      "footer.rights": "© 2026 Advantage Automotive Solutions. All rights reserved."
+      "footer.rights": "© 2026 Advantage Automotive Solutions. All rights reserved.",
+      "footer.location.dubai": "Dubai, UAE",
+      "footer.location.london": "London, UK",
+      "footer.location.toronto": "Toronto, CA",
+      "footer.location.singapore": "Singapore"
     }
   },
   ar: {
@@ -93,12 +116,19 @@ const resources = {
       "hero.title": "خبرة عالمية، تأثير محلي.",
       "hero.subtitle": "تمكين شركات السيارات من خلال الاستشارات والتوظيف وحلول التدريب التي تعالج تحديات العالم الحقيقي.",
       "hero.cta": "اكتشف حلولنا",
+      "hero.cta.opportunities": "عرض الفرص",
       
       "about.title": "أكثر من 90 عاماً من الخبرة العالمية المشتركة",
       "about.desc": "في أدفانتج أوتوموتيف سوليوشنز، نعيش في طليعة الابتكار والمعرفة الصناعية. من تحسين العمليات إلى تبني تقنيات جديدة أو إطلاق الفرص غير المستغلة، مهمتنا هي أن نكون أكثر من مجرد مستشارين — نحن شركاؤك العالميون على طريق النجاح الدائم.",
+      "about.performance.title": "الأداء",
+      "about.performance.desc": "لأنه عندما يتسارع أداؤك، يتسارع أداؤنا أيضاً.",
       
       "global.title": "وصول عالمي، جاهزون في كل وقت",
       "global.desc": "يقع فريقنا في مراكز عالمية رئيسية في جميع أنحاء الشرق الأوسط وآسيا والولايات المتحدة وكندا وأوروبا (بما في ذلك المملكة المتحدة)، مما يضمن أننا قادرون دائمًا على دعمك في أي منطقة زمنية تعمل فيها.",
+      "global.regions.middleEast": "الشرق الأوسط",
+      "global.regions.asia": "آسيا",
+      "global.regions.northAmerica": "أمريكا الشمالية",
+      "global.regions.europeUK": "أوروبا / المملكة المتحدة",
       
       "services.title": "حلولنا",
       "services.desc": "تصفح عبر كتالوج منتجاتنا. اطلب عروض أسعار محلية تناسب احتياجات السوق الخاصة بك تمامًا.",
@@ -126,8 +156,8 @@ const resources = {
       "contact.form.message": "رسالتك",
       "contact.form.submit": "إرسال استفسار",
       
-      "contact.title.custom": "طلب استشارة",
-      "contact.subtitle.custom": "ابدأ رحلة الترميم",
+      "contact.title.custom": "تواصل معنا",
+      "contact.subtitle.custom": "تواصل معنا على لينكد إن",
       "contact.success.title": "تم الإرسال بنجاح",
       "contact.success.desc": "شكرا لاستفسارك. سيقوم المتخصصون لدينا بمراجعة تفاصيل مشروعك والاتصال بك لتحديد موعد للاستشارة.",
       "contact.error.msg": "حدث خطأ أثناء الإرسال. يرجى التأكد من استقرار اتصالك والمحاولة مرة أخرى.",
@@ -143,6 +173,8 @@ const resources = {
 
       "opp.title": "الفرص الحالية",
       "opp.job.title": "أدوار ما بعد البيع للسيارات ذات الدخل المرتفع في جميع أنحاء المملكة المتحدة",
+      "opp.job.tag.new": "جديد",
+      "opp.job.tag.location": "على مستوى المملكة المتحدة",
       "opp.job.desc": "هل أنت متخصص ماهر في ما بعد البيع لسيارات الركاب أو المركبات التجارية الخفيفة (LCV) وتتطلع إلى ترقية فورية لمسيرتك المهنية وإمكانيات كسبك؟ نحن نتعاون مع مجموعة سيارات وطنية شهيرة في المملكة المتحدة للعثور على أفضل المواهب لعدة وكالات مرموقة على مستوى البلاد.",
       "opp.job.req.title": "ما نبحث عنه",
       "opp.job.req.1": "المؤهلات: شهادة فني مستوى NVQ 3 أو ما يعادلها (أو أعلى). خبرة في إدارة ما بعد البيع، والتحكم في الورش، والكوادر الاستشارية.",
@@ -158,8 +190,22 @@ const resources = {
       "opp.job.email": "registeryourcv@advantageautomotivesolutions.com",
       "opp.job.call": "سنقوم بترتيب مكالمة سرية أولية لمناقشة أفضل الأدوار لك!",
       
+      "home.journey.title": "رحلتنا",
+      "home.journey.desc": "أحدث التحديثات والأحداث والإنجازات.",
+      "home.journey.post1.title": "قدم اليوم: 🛠️ أدوار ما بعد البيع للسيارات ذات الدخل المرتفع متاحة في جميع أنحاء المملكة المتحدة! 🚀",
+      "home.journey.post1.shortDesc": "هل أنت متخصص ماهر في ما بعد البيع لسيارات الركاب أو المركبات التجارية الخفيفة وتتطلع إلى ترقية فورية لمسيرتك المهنية وإمكانيات كسبك؟",
+      "opp.job.apply.email_intro": "للتقديم: يرجى إرسال سيرتك الذاتية (بتنسيق Word) إلى:",
+      "opp.job.apply.include_intro": "يجب أن يتضمن طلبك:",
+      "opp.job.apply.include_1": "منطقة العمل الجغرافية المفضلة لديك.",
+      "opp.job.apply.include_2": "أحدث تفاصيل الاتصال.",
+      "opp.job.apply.include_3": "الحزمة الحالية ومدى التوفر.",
+      
       "footer.insights": "تابع صفحتنا للحصول على الرؤى والتحديثات واستراتيجيات الصناعة.",
-      "footer.rights": "© 2026 أدفانتج أوتوموتيف سوليوشنز. جميع الحقوق محفوظة."
+      "footer.rights": "© 2026 أدفانتج أوتوموتيف سوليوشنز. جميع الحقوق محفوظة.",
+      "footer.location.dubai": "دبي، الإمارات",
+      "footer.location.london": "لندن، المملكة المتحدة",
+      "footer.location.toronto": "تورونتو، كندا",
+      "footer.location.singapore": "سنغافورة"
     }
   },
   zh: {
@@ -172,12 +218,19 @@ const resources = {
       "hero.title": "全球视野，本土影响。",
       "hero.subtitle": "通过解决实际挑战的咨询、招聘和培训解决方案，助力汽车企业发展。",
       "hero.cta": "探索我们的解决方案",
+      "hero.cta.opportunities": "查看工作机会",
       
       "about.title": "逾90年全球经验的结晶",
       "about.desc": "在 Advantage Automotive Solutions，我们始终走在创新和行业知识的前沿。从优化运营到采用新技术，再到开启尚未开发的机遇，我们的使命不仅是做您的顾问，更是您在持续成功道路上的全球合作伙伴。",
+      "about.performance.title": "表现",
+      "about.performance.desc": "因为当您的表现加速时，我们也会随之加速。",
       
       "global.title": "全球布局，跨越时区",
       "global.desc": "我们的团队分布在中东、亚洲、美国与加拿大以及欧洲（包括英国）等全球关键中心，确保我们能够随时在您所在的时区为您提供支持。",
+      "global.regions.middleEast": "中东",
+      "global.regions.asia": "亚洲",
+      "global.regions.northAmerica": "北美",
+      "global.regions.europeUK": "欧洲 / 英国",
       
       "services.title": "我们的解决方案",
       "services.desc": "浏览我们的产品目录。索取完全符合您市场需求的本地化报价。",
@@ -205,8 +258,8 @@ const resources = {
       "contact.form.message": "您的留言",
       "contact.form.submit": "发送咨询",
       
-      "contact.title.custom": "预约咨询",
-      "contact.subtitle.custom": "开启修复之旅",
+      "contact.title.custom": "联系我们",
+      "contact.subtitle.custom": "在 LinkedIn 上与我们联系",
       "contact.success.title": "发送成功",
       "contact.success.desc": "感谢您的查询。我们的专家将审查您的项目详细信息并与您联系安排咨询。",
       "contact.error.msg": "传输过程中发生错误。请确保您的连接稳定并重试。",
@@ -222,6 +275,8 @@ const resources = {
 
       "opp.title": "当前的工作机会",
       "opp.job.title": "全英高收益汽车售后服务职位",
+      "opp.job.tag.new": "新",
+      "opp.job.tag.location": "全英国",
       "opp.job.desc": "您是一位熟练的乘用车或轻型商用车（LCV）售后专家，正在寻求职业和收入潜力的立即提升吗？我们正与一家著名的英国全国性汽车集团合作，为全国多家知名经销商寻找顶尖人才。",
       "opp.job.req.title": "我们正在寻找",
       "opp.job.req.1": "资格：NVQ 3级或同等技术人员认证（或更高级别）。经验丰富的售后管理、车间控制和咨询人员。",
@@ -237,8 +292,22 @@ const resources = {
       "opp.job.email": "registeryourcv@advantageautomotivesolutions.com",
       "opp.job.call": "我们将安排一次初步的保密电话，以讨论最适合您的角色！",
       
+      "home.journey.title": "我们的旅程",
+      "home.journey.desc": "最新动态、活动和里程碑。",
+      "home.journey.post1.title": "立即申请：🛠️ 全英提供高薪汽车售后服务职位！ 🚀",
+      "home.journey.post1.shortDesc": "您是一位熟练的乘用车或轻型商用车（LCV）售后专家，正在寻求职业和收入潜力的立即提升吗？",
+      "opp.job.apply.email_intro": "如何申请：请将您的个人简历（Word格式）发送至：",
+      "opp.job.apply.include_intro": "您的申请应包括：",
+      "opp.job.apply.include_1": "您的首选地理工作区域。",
+      "opp.job.apply.include_2": "最新联系方式。",
+      "opp.job.apply.include_3": "当前薪酬包裹以及可用时间。",
+      
       "footer.insights": "关注我们的页面获取行业洞察、更新与战略。",
-      "footer.rights": "© 2026 Advantage Automotive Solutions。保留所有权利。"
+      "footer.rights": "© 2026 Advantage Automotive Solutions。保留所有权利。",
+      "footer.location.dubai": "迪拜，阿联酋",
+      "footer.location.london": "伦敦，英国",
+      "footer.location.toronto": "多伦多，加拿大",
+      "footer.location.singapore": "新加坡"
     }
   }
 };

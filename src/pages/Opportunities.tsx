@@ -41,8 +41,8 @@ export function Opportunities() {
              
              <div className="relative z-10">
                <div className="flex items-center gap-3 mb-6">
-                 <span className="bg-amber-500/20 text-amber-500 px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-md border border-amber-500/20">New</span>
-                 <span className="text-slate-400 text-sm flex items-center"><MapPin className="w-4 h-4 mr-1"/> UK Nationwide</span>
+                 <span className="bg-amber-500/20 text-amber-500 px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-md border border-amber-500/20">{t('opp.job.tag.new')}</span>
+                 <span className="text-slate-400 text-sm flex items-center"><MapPin className="w-4 h-4 mr-1"/> {t('opp.job.tag.location')}</span>
                </div>
                <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4 leading-tight">
                  {t('opp.job.title')}
@@ -108,19 +108,19 @@ export function Opportunities() {
                    <Mail className="w-6 h-6 text-amber-500" />
                  </div>
                  <div className="flex-1 text-center sm:text-left">
-                   <p className="text-white font-bold mb-1">Send your CV to:</p>
-                   <a href="mailto:registeryourcv@advantageautomotivesolutions.com" className="text-amber-500 hover:text-amber-400 transition-colors hover:underline break-all">
-                     registeryourcv@advantageautomotivesolutions.com
+                   <p className="text-white font-bold mb-1">{t('opp.job.apply.email_intro')}</p>
+                   <a href={`mailto:${t('opp.job.email')}`} className="text-amber-500 hover:text-amber-400 transition-colors hover:underline break-all">
+                     {t('opp.job.email')}
                    </a>
                  </div>
                </div>
 
                <div className="text-sm text-slate-400 mb-6 leading-relaxed">
-                 <strong>Your application should include:</strong>
+                 <strong>{t('opp.job.apply.include_intro')}</strong>
                  <ul className="list-disc pl-5 mt-2 space-y-1">
-                   <li>Your preferred geographical working area.</li>
-                   <li>Latest contact details.</li>
-                   <li>Your current package and availability.</li>
+                   <li>{t('opp.job.apply.include_1')}</li>
+                   <li>{t('opp.job.apply.include_2')}</li>
+                   <li>{t('opp.job.apply.include_3')}</li>
                  </ul>
                </div>
                

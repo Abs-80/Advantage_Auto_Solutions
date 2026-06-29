@@ -28,10 +28,10 @@ export function Navbar() {
           <div className="flex items-center">
             <NavLink to="/" className="flex items-center shrink-0">
               <span className="font-display font-extrabold text-[22px] tracking-tight text-white hidden sm:block uppercase">
-                Advantage <span className="text-amber-500">Solutions</span>
+                Advantage Auto <span className="text-amber-500">Solutions</span>
               </span>
               <span className="font-display font-extrabold text-[22px] tracking-tight text-white sm:hidden uppercase">
-                A<span className="text-amber-500">S</span>
+                AA<span className="text-amber-500">S</span>
               </span>
             </NavLink>
           </div>
