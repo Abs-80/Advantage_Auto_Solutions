@@ -26,13 +26,16 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-[70px]">
           <div className="flex items-center">
-            <NavLink to="/" className="flex items-center shrink-0">
-              <span className="font-display font-extrabold text-[22px] tracking-tight text-white hidden sm:block uppercase">
-                Advantage Auto <span className="text-amber-500">Solutions</span>
-              </span>
-              <span className="font-display font-extrabold text-[22px] tracking-tight text-white sm:hidden uppercase">
-                AA<span className="text-amber-500">S</span>
-              </span>
+            <NavLink to="/" className="flex flex-col justify-center shrink-0">
+              <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Logo" className="h-6 sm:h-8 w-auto object-contain mb-0.5 sm:mb-1" />
+              <div className="flex items-center">
+                <span className="font-display font-extrabold text-[16px] sm:text-[18px] leading-none tracking-tight text-white hidden sm:block uppercase">
+                  Advantage Auto <span className="text-amber-500">Solutions</span>
+                </span>
+                <span className="font-display font-extrabold text-[18px] leading-none tracking-tight text-white sm:hidden uppercase">
+                  AA<span className="text-amber-500">S</span>
+                </span>
+              </div>
             </NavLink>
           </div>
 
@@ -44,8 +47,8 @@ export function Navbar() {
                   key={link.to}
                   to={link.to}
                   className={({ isActive }) =>
-                    `text-sm font-medium transition-all hover:text-white flex items-center h-[70px] border-b-2 relative ${
-                      isActive ? 'text-white border-amber-500 drop-shadow-[0_0_15px_rgba(245,158,11,0.8)]' : 'text-slate-400 border-transparent'
+                    `text-sm font-medium transition-all hover:text-amber-400 flex items-center h-[70px] relative ${
+                      isActive ? 'text-amber-500 drop-shadow-[0_0_15px_rgba(245,158,11,0.8)]' : 'text-slate-400'
                     }`
                   }
                 >
@@ -59,7 +62,7 @@ export function Navbar() {
                 <button 
                   key={lang}
                   onClick={() => i18n.changeLanguage(lang)}
-                  className={`uppercase pb-0.5 border-b-2 transition-colors ${i18n.language === lang ? 'text-white border-amber-500' : 'border-transparent hover:text-white'}`}
+                  className={`uppercase pb-0.5 transition-colors ${i18n.language === lang ? 'text-amber-500' : 'hover:text-amber-400'}`}
                 >
                   {lang}
                 </button>
@@ -78,9 +81,9 @@ export function Navbar() {
           <div className="flex items-center md:hidden">
              <button
               onClick={toggleLanguage}
-              className="flex items-center space-x-2 text-sm font-medium text-slate-400 mr-4 hover:text-white"
+              className="flex items-center space-x-2 text-sm font-medium text-slate-400 mr-4 hover:text-amber-400 transition-colors"
             >
-              <span className="uppercase border-b-2 border-transparent hover:border-amber-500 pb-0.5">{i18n.language}</span>
+              <span className="uppercase pb-0.5">{i18n.language}</span>
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
